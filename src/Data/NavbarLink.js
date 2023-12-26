@@ -20,6 +20,5 @@ export const NavLinks = [
     {
         id:5,
         title:"Library",
-        path:"/library"
     },
 ]

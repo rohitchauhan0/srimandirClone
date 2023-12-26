@@ -14,6 +14,9 @@ import icon2 from "../Assets/icon2.svg";
 import icon3 from "../Assets/icon3.svg";
 import icon4 from "../Assets/icon4.svg";
 import blueIcon1 from "../Assets/blueicon1.svg"
+import blueIcon2 from "../Assets/blueicon2.svg"
+import blueIcon3 from "../Assets/blueicon3.svg"
+import blueIcon4 from "../Assets/blueicon4.svg"
 
 const Homepage = () => {
   return (
@@ -154,8 +157,11 @@ const Homepage = () => {
             </p>
           </div>
 
-          <div className=" flex flex-col gap-6 w-[50%] h-full  justify-center">
-              <GradientCard icon={blueIcon1} title={"1 Crore+ Devotees"}/>
+          <div className="col-span-2 space-y-8 md:grid md:grid-cols-2 md:gap-12 md:space-y-0 w-[50%]  ">
+              <GradientCard icon={blueIcon1} title={"1 Crore+ Devotees"}  textcolor={"text-white"} text={"have trusted us in their devotional journey"}/>  
+               <GradientCard icon={blueIcon2} title={"4.6 star rating"}  textcolor={"text-white"} text={"Over 1 Lakh devotees express their love for us on playstore"}/>  
+                <GradientCard icon={blueIcon3} title={"5000+ Music Collection"}  textcolor={"text-white"} text={"Listen to your favourite Bhajans, Chalisa, Mantra and Aarti AD-Free"}/>
+                <GradientCard icon={blueIcon4} title={"250K+ Successful Pooja Services"}  textcolor={"text-white"} text={"Millions of devotees have commenced Pooja at famous temples of India with us to seek God's grace."}/>
           </div>
         </div>
       </div>

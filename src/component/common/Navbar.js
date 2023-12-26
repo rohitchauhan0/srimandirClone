@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import logo from "../../Assets/img_sm_logo_en_dark.svg"
 import { Link } from 'react-router-dom'
 import { NavLinks } from '../../Data/NavbarLink'
 import { FaAngleDown } from "react-icons/fa6";
+import { libraryLinks } from '../../Data/LibraryText';
 
 const Navbar = () => {
+    const [showLibrary, setshowLibrary] = useState(false)
   return (
     <div className='fixed top-0  z-[1000] w-full bg-white border-b-[1px] border-gray-200'>
         <div className=' bg-white  py-3 flex items-center justify-between  max-w-screen-xl mx-auto'>
@@ -17,8 +19,19 @@ const Navbar = () => {
                         NavLinks.map((data)=>{
                             return <Link className=' hover:text-orange-700 transition-all duration-200' to={data.path}>
                                 {
-                                    data.title === "Library" ? (<div className=' flex items-center gap-2'><p>Library</p>
-                                    <FaAngleDown />
+                                    data.title === "Library" ? (<div className=' flex items-center gap-2 relative'><p>Library</p>
+                                    <FaAngleDown onClick={()=> setshowLibrary(!showLibrary)} />
+                                    <div className={`${showLibrary ? "hidden":"visible"} absolute bg-white rounded-xl p-3 translate-y-[53%] -translate-x-[30%] border-[1px] border-gray-400 min-w-[500px] h-[500px] z-[2000] transition-all duration-200 flex flex-col gap-5`}>
+                                    {
+                                        libraryLinks.map((data)=>{
+                                            return <div className=' flex flex-col gap-2 text-gray-400'>
+                                                <h2 className=' text-black'>{data.title}</h2>
+                                                <p>{data.text}</p>
+                                            </div>
+                                        })
+                                    }
+
+                                    </div>
                                     </div>) : (data.title)
                                 }
                             </Link>
