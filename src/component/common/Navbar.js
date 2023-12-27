@@ -4,11 +4,14 @@ import { Link } from 'react-router-dom'
 import { NavLinks } from '../../Data/NavbarLink'
 import { FaAngleDown } from "react-icons/fa6";
 import { libraryLinks } from '../../Data/LibraryText';
+import Template from '../core/Auth/Template';
 
 const Navbar = () => {
-    const [showLibrary, setshowLibrary] = useState(false)
+    const [showLibrary, setshowLibrary] = useState(true)
+    const [modal, setmodal] = useState(false)
   return (
-    <div className='fixed top-0  z-[1000] w-full bg-white border-b-[1px] border-gray-200'>
+   <>
+     <div className='fixed top-0  z-[1000] w-full bg-white border-b-[1px] border-gray-200'>
         <div className=' bg-white  py-3 flex items-center justify-between  max-w-screen-xl mx-auto'>
                     <Link>
                     <img src={logo} alt="" />
@@ -44,7 +47,11 @@ const Navbar = () => {
                             <FaAngleDown />
                         </button>
                         <button
-                        className=' text-[15px] rounded-lg  px-5 py-2 bg-orange-400 text-white'>
+                        className=' text-[15px] rounded-lg  px-5 py-2 bg-orange-400 text-white'
+                            onClick={()=>{
+                                setmodal(true)
+                            }}
+                        >
                             Login
                         </button>
                 </div>
@@ -52,6 +59,10 @@ const Navbar = () => {
         </div>
 
     </div>
+    {
+        modal && <Template cancelHandler={()=> setmodal(null)} />
+    }
+   </>
   )
 }
 
