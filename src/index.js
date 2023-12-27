@@ -19,6 +19,6 @@ root.render(
     <App />
     <Toaster/>
   </BrowserRouter>
-  // </Provider>
+  </Provider>
 
 );

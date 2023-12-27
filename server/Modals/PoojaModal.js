@@ -5,7 +5,7 @@ const  poojaModal = new mongoose.Schema({
         type:String,
         required:true
     },
-    descripton:{
+    description:{
         type:String,
         required:true,
     },
@@ -17,12 +17,7 @@ const  poojaModal = new mongoose.Schema({
         type:String,
         required:true
     },
-    benfits:[
-        {
-            type:String
-        }
-    ],
-    templeDetails:{
+    templeDetail:{
         type:String,
         required:true
     },
@@ -38,15 +33,18 @@ const  poojaModal = new mongoose.Schema({
     image4:{
         type:String,
     },
-     personImage4:{
-        type:String,
-    },
     personName:{
         type:String
     },
     personExperience:{
         type:String
-    }
+    },
+    poojaBenefits:[
+        {
+            type:mongoose.Schema.Types.ObjectId,
+            ref:"poojaBenefits"
+        }
+    ]
 })
 
 module.exports = mongoose.model("pooja", poojaModal)
