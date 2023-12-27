@@ -56,6 +56,7 @@ export function login(email, password, navigate){
             const response = await apiConnector("POST", LOGIN_API, {email, password})
             if(!response.data.success){
                 toast.error(response.data.message)
+                return
             }
             toast.success("Login Successfull")
             dispatch(setToken(response.data.token))
