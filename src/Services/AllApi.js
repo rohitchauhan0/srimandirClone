@@ -9,10 +9,13 @@ export const authEndPoints = {
 
 export const pujaEndPoints = {
         CREATE_PUJA_API : BASE_URL + "/puja/createPuja",
+        GET_ALL_PUJA_API : BASE_URL + "/puja/getAllPooja",
+        GET_PUJA_BY_ID_API : BASE_URL + "/puja/getPoojaByid",
+        DELETE_POOJA_API : BASE_URL + "/puja/deletePooja",
+        EDIT_DATE_API : BASE_URL + "/puja/editDate",
 }
 
 export const benifitEndPoints = {
         CREATE_BENEFITS_API : BASE_URL + "/puja/createBenefits",
         GET_ALL_BENEFITS_API : BASE_URL + "/puja/getAllBenefits",
-
 }

@@ -7,7 +7,11 @@ const { uploadImageToCloudinary } = require('../Utils/uploadImage')
 exports.createPooja = async(req, res)=>{
     try {
         const {title, description, address, date,templeDetail, personName, personExperience, poojaBenefits } = req.body
-        const {image1, image2, image3, image4} = req.files
+        console.log(title, description, address, date,templeDetail, personName, personExperience, poojaBenefits)
+        const image1 = req.files.image1
+        const image2 = req.files.image2
+        const image3 = req.files.image3
+        const image4 = req.files.image4
         const thumbnail1 = await uploadImageToCloudinary(image1, process.env.FOLDER_NAME)
         const thumbnail2 = await uploadImageToCloudinary(image2, process.env.FOLDER_NAME)
         const thumbnail3 = await uploadImageToCloudinary(image3, process.env.FOLDER_NAME)
@@ -25,8 +29,10 @@ exports.createPooja = async(req, res)=>{
             image2:thumbnail2.secure_url,
             image3:thumbnail3.secure_url,
             image4:thumbnail4.secure_url,
-            poojaBenefits:[]
+            poojaBenefits:[poojaBenefits]
         })
+
+
 
         return res.status(200).json({
             success:true,
@@ -41,6 +47,95 @@ exports.createPooja = async(req, res)=>{
         });
     }
 }
+
+
+exports.getAllPooja = async(req, res)=>{
+    try {
+        const getPOoja = await pooja.find({}).sort({createdAt:-1}).exec()
+        return res.status(200).json({
+            success:true,
+            data:getPOoja
+        })
+        
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({
+          success: false,
+          message: error.message,
+        });
+    }
+}
+
+exports.getPoojaByid = async(req, res)=>{
+    try {
+        const {poojaId} = req.body
+        const poojaDetails = await pooja.findById({_id:poojaId}).populate("poojaBenefits").exec()
+        return res.status(200).json({
+            success:true,
+            data:poojaDetails
+        })
+        
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({
+          success: false,
+          message: error.message,
+        });
+    }
+}
+
+exports.deletePooja = async(req, res)=>{
+    try {
+        const {poojaId} = req.body
+        const deletePooja = await pooja.findByIdAndDelete(poojaId)
+        return res.status(200).json({
+            success:true,
+            message:"Deleted successfully"
+        })
+
+        
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({
+          success: false,
+          message: error.message,
+        });
+    }
+}
+
+
+exports.editDate = async(req, res)=>{
+    try {
+        const {date, poojaId}= req.body
+
+        const updatePooja = await pooja.findByIdAndUpdate({_id:poojaId}, {
+            date:date
+        }, {new:true})
+    
+        return res.status(200).json({
+            success:true,
+            message:"Date update successfully"
+        })
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({
+          success: false,
+          message: error.message,
+        });
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 exports.createBenefits = async(req, res)=>{
     try {

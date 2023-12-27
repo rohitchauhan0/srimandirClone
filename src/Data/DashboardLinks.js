@@ -21,18 +21,25 @@ export const DASHBOARD_LINK = [
     },
     {
         id:4,
+        title:"My pooja",
+        path:"/dashboard/my-pooja",
+        accountType: ACCOUNT_TYPE.ADMIN
+
+    },
+    {
+        id:5,
         title:"Create benefits",
         path:"/dashboard/create-benifits",
         accountType: ACCOUNT_TYPE.ADMIN
     },
     {
-        id:5,
+        id:6,
         title:"Offering items",
     path:"/dashboard/offering-items",
         accountType: ACCOUNT_TYPE.ADMIN
     },
     {
-        id:6,
+        id:7,
         title:"Enrolled user",
         accountType: ACCOUNT_TYPE.ADMIN,
     path:"/dashboard/Enrolled-user",

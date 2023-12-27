@@ -50,8 +50,8 @@ const Navbar = () => {
                                     <FaAngleDown  />
                                     <div className={`${showLibrary ? "hidden":"visible"} absolute bg-white rounded-xl p-3 translate-y-[53%] -translate-x-[30%] border-[1px] border-gray-400 min-w-[500px] h-[500px] z-[2000] transition-all duration-200 flex flex-col gap-5`}>
                                     {
-                                        libraryLinks.map((data)=>{
-                                            return <div className=' flex flex-col gap-2 text-gray-400'>
+                                        libraryLinks.map((data, index)=>{
+                                            return <div className=' flex flex-col gap-2 text-gray-400' key={index}>
                                                 <h2 className=' text-black'>{data.title}</h2>
                                                 <p>{data.text}</p>
                                             </div>

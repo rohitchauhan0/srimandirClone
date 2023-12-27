@@ -44,7 +44,11 @@ const  poojaModal = new mongoose.Schema({
             type:mongoose.Schema.Types.ObjectId,
             ref:"poojaBenefits"
         }
-    ]
+    ],
+    createdAt:{
+        type:Date,
+        default:Date.now()
+    }
 })
 
 module.exports = mongoose.model("pooja", poojaModal)
