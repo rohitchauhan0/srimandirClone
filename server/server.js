@@ -15,7 +15,7 @@ app.use(cookieParser())
 const cors = require('cors')
 app.use(
     cors({
-        origin:"https://srimandir-clone.vercel.app/",
+        origin:"https://srimandir-clone-4nmxnmxim-rohit-chauhans-projects.vercel.app",
         // origin:"http://localhost:3000",
         credentials:true
     })
