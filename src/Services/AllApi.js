@@ -19,4 +19,18 @@ export const pujaEndPoints = {
 export const benifitEndPoints = {
         CREATE_BENEFITS_API : BASE_URL + "/puja/createBenefits",
         GET_ALL_BENEFITS_API : BASE_URL + "/puja/getAllBenefits",
+        DELETE_BENEFITS_API : BASE_URL + "/puja/deleteBenefits",
+}
+
+export const packageEnPoints = {
+        CREATE_PACKAGE_API : BASE_URL + "/package/createPackage",
+        GET_ALL_PACKAGE_API : BASE_URL + "/package/getAllPackage",
+        DELTE_PACKAGE_API : BASE_URL + "/package/deletePackage",
+}
+
+
+export const itemEndPoints = {
+        CREATE_ITEM_API : BASE_URL + "/item/createItem",
+        GET_ALL_ITEM_API : BASE_URL + "/item/getItem",
+        DELTE_ITEM_API : BASE_URL + "/item/deleteItem",
 }

@@ -20,16 +20,30 @@ const Step3 = () => {
     dispatch(setSteps(1))
 }
 
-const {
-  title, description, address,date, templeDetail, personName, personExperience, poojaBenefits, image1, image2, image3, image4
-} = pooja
 
 
 
 const handleSubmit = async()=>{
   const toastId = toast.loading("Please wait")
+  const { title, description, address, date, templeDetail, personName, personExperience, image1, image2, image3, image4, poojaBenefits } = pooja;
+
+  const formData = new FormData();
+formData.append('title', title);
+formData.append('description', description);
+formData.append('address', address);
+formData.append('date', date);
+formData.append('templeDetail', templeDetail);
+formData.append('personName', personName);
+formData.append('personExperience', personExperience);
+formData.append('poojaBenefits', poojaBenefits);
+formData.append('image1', image1);
+formData.append('image2', image2);
+formData.append('image3', image3);
+formData.append('image4', image4);
+
+
   try {
-    const response = await apiConnector("POST", CREATE_PUJA_API, { title, description, address,date, templeDetail, personName, personExperience, poojaBenefits, image1, image2, image3, image4},{
+    const response = await apiConnector("POST", CREATE_PUJA_API, formData,{
       "Content-Type": "multipart/form-data",
       Authorization:`Bearer ${token}`
     })

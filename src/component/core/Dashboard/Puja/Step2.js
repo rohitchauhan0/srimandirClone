@@ -10,7 +10,7 @@ const Step2 = () => {
   const { pooja } = useSelector((state) => state.pooja);
   const { GET_ALL_BENEFITS_API } = benifitEndPoints;
   const [benefits, setbenefits] = useState([]);
-  const [poojaBenefits, setPoojaBenefits] = useState([]);
+  const [poojaBenefits, setPoojaBenefits] = useState(pooja.poojaBenefits || []);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -25,25 +25,15 @@ const Step2 = () => {
     getBenefits();
   }, []);
 
-  const removeIdFromArray = (array, idToRemove) => {
-    // Use the filter method to create a new array excluding the specified ID
-    const newArray = array.filter((item) => item !== idToRemove);
 
-    return newArray;
-  };
-
-  const arr = [];
   const handleRemove = (idToRemove) => {
-    const updatedArr = arr.filter((id) => id !== idToRemove);
-    // Update the state or perform any necessary actions with updatedArr
-    setPoojaBenefits(updatedArr)
-
+    const updatedBenefits = poojaBenefits.filter((id) => id !== idToRemove);
+    setPoojaBenefits(updatedBenefits);
   };
   
   const handleAdd = (idToAdd) => {
-    const updatedArr = [...arr, idToAdd];
-    // Update the state or perform any necessary actions with updatedArr
-    setPoojaBenefits(updatedArr)
+    const updatedBenefits = [...poojaBenefits, idToAdd];
+    setPoojaBenefits(updatedBenefits);
   };
   
 
@@ -56,6 +46,8 @@ const Step2 = () => {
     dispatch(setPooja({ ...pooja, poojaBenefits }));
     dispatch(setSteps(3));
   };
+
+  console.log(poojaBenefits)
 
   return (
     <div className=" flex flex-col gap-10">

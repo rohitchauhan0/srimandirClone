@@ -20,6 +20,13 @@ export const DASHBOARD_LINK = [
 
     },
     {
+        id:8,
+        title:"My package",
+        path:"/dashboard/my-package",
+        accountType: ACCOUNT_TYPE.ADMIN
+
+    },
+    {
         id:4,
         title:"My pooja",
         path:"/dashboard/my-pooja",
@@ -31,11 +38,22 @@ export const DASHBOARD_LINK = [
         title:"Create benefits",
         path:"/dashboard/create-benifits",
         accountType: ACCOUNT_TYPE.ADMIN
+    },{
+        id:10,
+        title:"My benefits",
+        path:"/dashboard/my-benifits",
+        accountType: ACCOUNT_TYPE.ADMIN
     },
     {
         id:6,
         title:"Offering items",
     path:"/dashboard/offering-items",
+        accountType: ACCOUNT_TYPE.ADMIN
+    },
+    {
+        id:9,
+        title:"My items",
+    path:"/dashboard/my-items",
         accountType: ACCOUNT_TYPE.ADMIN
     },
     {

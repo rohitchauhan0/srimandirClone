@@ -7,7 +7,6 @@ const { uploadImageToCloudinary } = require('../Utils/uploadImage')
 exports.createPooja = async(req, res)=>{
     try {
         const {title, description, address, date,templeDetail, personName, personExperience, poojaBenefits } = req.body
-        console.log(title, description, address, date,templeDetail, personName, personExperience, poojaBenefits)
         const image1 = req.files.image1
         const image2 = req.files.image2
         const image3 = req.files.image3
@@ -29,7 +28,7 @@ exports.createPooja = async(req, res)=>{
             image2:thumbnail2.secure_url,
             image3:thumbnail3.secure_url,
             image4:thumbnail4.secure_url,
-            poojaBenefits:[poojaBenefits]
+            poojaBenefits:poojaBenefits
         })
 
 
@@ -168,6 +167,24 @@ exports.getAllBenifit = async(req, res)=>{
         return res.status(200).json({
             success:true,
             data:getAllBenifits
+        })
+        
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({
+          success: false,
+          message: error.message,
+        });
+    }
+}
+
+exports.deleteBenefit = async(req, res)=>{
+    try {
+        const {benefitId} = req.body
+        const updateBenefit = await PoojaBenefits.findByIdAndDelete(benefitId)
+        return res.status(200).json({
+            success:true,
+            message:"Delete successfully"
         })
         
     } catch (error) {
