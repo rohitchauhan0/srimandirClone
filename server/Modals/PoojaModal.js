@@ -17,6 +17,10 @@ const  poojaModal = new mongoose.Schema({
         type:String,
         required:true
     },
+    templeName:{
+        type:String,
+        required:true
+    },
     templeDetail:{
         type:String,
         required:true

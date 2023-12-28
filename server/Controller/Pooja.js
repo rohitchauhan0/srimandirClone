@@ -6,7 +6,7 @@ const { uploadImageToCloudinary } = require('../Utils/uploadImage')
 
 exports.createPooja = async(req, res)=>{
     try {
-        const {title, description, address, date,templeDetail, personName, personExperience, poojaBenefits } = req.body
+        const {title, description, address, date,templeDetail, personName, personExperience, poojaBenefits, templeName } = req.body
         const image1 = req.files.image1
         const image2 = req.files.image2
         const image3 = req.files.image3
@@ -21,6 +21,7 @@ exports.createPooja = async(req, res)=>{
             description,
             address,
             templeDetail,
+            templeName,
             date,
             personName,
             personExperience,
@@ -28,7 +29,7 @@ exports.createPooja = async(req, res)=>{
             image2:thumbnail2.secure_url,
             image3:thumbnail3.secure_url,
             image4:thumbnail4.secure_url,
-            poojaBenefits:poojaBenefits
+            poojaBenefits:poojaBenefits,
         })
 
 

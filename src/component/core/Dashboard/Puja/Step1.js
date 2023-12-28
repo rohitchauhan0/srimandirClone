@@ -65,6 +65,20 @@ const Step1 = () => {
         </div>
         <div className=" flex flex-col gap-2 px-2">
           <label className=" text-orange-500 font-semibold">
+            Enter temple name<sup className=" text-red-500 text-sm">*</sup>
+          </label>
+          <input
+            type="text"
+            className=" w-full border-2 border-orange-500  rounded-xl p-2"
+            placeholder="Enter temple name here"
+            {...register("templeName", { required: true })}
+          />
+          {errors.templeName && (
+            <span className=" text-red-500">Temple Name is required</span>
+          )}
+        </div>
+        <div className=" flex flex-col gap-2 px-2">
+          <label className=" text-orange-500 font-semibold">
             Enter temple details<sup className=" text-red-500 text-sm">*</sup>
           </label>
           <textarea

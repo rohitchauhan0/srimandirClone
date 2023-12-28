@@ -25,7 +25,7 @@ const Step3 = () => {
 
 const handleSubmit = async()=>{
   const toastId = toast.loading("Please wait")
-  const { title, description, address, date, templeDetail, personName, personExperience, image1, image2, image3, image4, poojaBenefits } = pooja;
+  const { title, description, address, date, templeDetail, personName, personExperience, image1, image2, image3, image4, poojaBenefits,templeName } = pooja;
 
   const formData = new FormData();
 formData.append('title', title);
@@ -36,6 +36,7 @@ formData.append('templeDetail', templeDetail);
 formData.append('personName', personName);
 formData.append('personExperience', personExperience);
 formData.append('poojaBenefits', poojaBenefits);
+formData.append('templeName', templeName);
 formData.append('image1', image1);
 formData.append('image2', image2);
 formData.append('image3', image3);

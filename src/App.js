@@ -15,6 +15,7 @@ import MyItems from './component/core/Dashboard/Items/MyItems'
 import MyBenefits from './component/core/Dashboard/Benefits/MyBenefits'
 import Setting from './component/core/Dashboard/Settings/Setting'
 import PujaPage from './Pages/PujaPage'
+import PoojaById from './component/core/PujaSection/PoojaById'
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
    <Routes>
     <Route path='/' element={<Homepage/>}/>
     <Route path='/puja' element={<PujaPage/>}/>
+    <Route path='/puja/:poojaId' element={<PoojaById/>}/>
 
 
    <Route path='/dashboard' element={<Dashboard/>}>

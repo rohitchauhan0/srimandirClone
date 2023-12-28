@@ -3,6 +3,7 @@ import templeImage from "../Assets/nepal-kaal-bhairav-shrine-mg51krf9md7dnf56.jp
 import templeImage1 from "../Assets/pahala-basuki-z3NhWL4O39Q-unsplash.jpg"
 import templeImage2 from "../Assets/sanjan-malakala-P9JAVSExxh0-unsplash.jpg"
 import frontImage from "../Assets/puja_L1_hero.svg"
+import Poojacard from '../component/core/PujaSection/Poojacard'
 
 const PujaPage = () => {
   return (
@@ -35,8 +36,12 @@ const PujaPage = () => {
             </div>
            </div>
           </div>
-          <div>
-            
+          <div className=' max-w-screen-xl mx-auto min-h-screen pt-20'>
+               <div className=' w-[70%] flex gap-4 flex-col'>
+               <h2 className=' text-4xl font-bold'>Upcoming Pujas on Sri Mandir.</h2>
+                <p className=' text-lg text-gray-500'>Book online puja with Sri Mandir in more than 500+ temples across India. Receive video of the puja along with the Prasad and receive blessings from the divine for prosperity and well-being of you and your family</p>
+               </div>
+            <Poojacard/>
           </div>
     </div>
   )
