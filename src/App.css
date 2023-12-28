@@ -54,3 +54,29 @@
 .active{
     color: #ff8e0d;
 }
+
+
+.upDownAnimation{
+  animation: upDownAnimation linear infinite 6s   ;
+}
+.upDownAnimation1{
+  animation: upDownAnimation linear infinite 7s   ;
+}
+
+@keyframes upDownAnimation {
+    0%, 100%{
+      transform: translateY(-100px);
+    }
+    50%{
+      transform: translateY(100px);
+    }
+}
+
+
+.fadeColor{
+background: linear-gradient(0deg, rgba(67,67,67,0) 0%, rgba(255,253,253,0.9977240896358543) 95%);
+}
+.fadeColor1{
+  background: rgb(255,253,253);
+  background: linear-gradient(0deg, rgba(255,253,253,0.9977240896358543) 0%, rgba(67,67,67,0) 100%);
+}

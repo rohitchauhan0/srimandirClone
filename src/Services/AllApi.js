@@ -6,6 +6,9 @@ export const authEndPoints = {
         LOGIN_API : BASE_URL + "/auth/login",
         SEND_OTP_API : BASE_URL + "/auth/sendotp",
         GET_USER_BY_ID_API : BASE_URL + "/auth/getUserById",
+        UPDATE_IMAGE_ID_API : BASE_URL + "/auth/updateImage",
+        UPDATE_PHONE_NUM_ID_API : BASE_URL + "/auth/updatePhoneNum",
+        CHANGE_PASSWORD_API : BASE_URL + "/auth/changePassword",
 }
 
 export const pujaEndPoints = {

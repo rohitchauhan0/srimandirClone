@@ -10,6 +10,6 @@ router.delete("/deleteBenefits", auth, isAdmin, deleteBenefit)
 router.get("/getAllPooja", getAllPooja)
 router.post("/getPoojaByid", getPoojaByid)
 router.delete("/deletePooja", deletePooja)
-router.put("/editDate", editDate)
+router.put("/editDate", editDate) 
 
 module.exports = router

@@ -9,7 +9,7 @@ exports.auth = async (req, res, next) => {
       req.header("Authorization").replace("Bearer ", "");
     if (!token) {
       return res.satus(400).json({
-        success: true,
+        success: true, 
         message: "Token not found",
       });
     }

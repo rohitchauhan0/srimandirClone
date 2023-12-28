@@ -13,6 +13,8 @@ import MyPackage from './component/core/Dashboard/Package/MyPackage'
 import CreateItem from './component/core/Dashboard/Items/CreateItem'
 import MyItems from './component/core/Dashboard/Items/MyItems'
 import MyBenefits from './component/core/Dashboard/Benefits/MyBenefits'
+import Setting from './component/core/Dashboard/Settings/Setting'
+import PujaPage from './Pages/PujaPage'
 
 const App = () => {
   return (
@@ -20,6 +22,7 @@ const App = () => {
     <Navbar/>
    <Routes>
     <Route path='/' element={<Homepage/>}/>
+    <Route path='/puja' element={<PujaPage/>}/>
 
 
    <Route path='/dashboard' element={<Dashboard/>}>
@@ -32,6 +35,7 @@ const App = () => {
     <Route path='/dashboard/offering-items' element={<CreateItem/>} />
     <Route path='/dashboard/my-items' element={<MyItems/>} />
     <Route path='/dashboard/my-benifits' element={<MyBenefits/>} />
+    <Route path='/dashboard/settings' element={<Setting/>} />
    </Route>
 
 

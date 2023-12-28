@@ -191,19 +191,17 @@ exports.updateProfileImage = async(req, res)=>{
     }
 }
 
-exports.updateProfile = async(req, res)=>{
+exports.updatePhoneNum = async(req, res)=>{
     try {
-        const {fullName, email, phoneNum} = req.body
+        const {phoneNum} = req.body
         const userId = req.user.id 
-        const updateProfile = await User.findById({_id:userId}, {
-            fullName:fullName,
-            email:email,
+        const updateProfile = await User.findByIdAndUpdate({_id:userId}, {
             phoneNum:phoneNum
-        })
+        },{new:true})
 
         return res.status(200).json({
             success:true,
-            message:"Profile updated successfully"
+            message:"Profile number successfully"
         })
         
     } catch (error) {
@@ -232,4 +230,34 @@ exports.getuserDetailById = async(req, res)=>{
           message: error.message,
         });
     }
+}
+
+exports.changePassword = async(req, res)=>{
+  try {
+    const {oldPassword, newPassword} = req.body
+    const userId = req.user.id
+    const user = await User.findById(userId)
+    const checkPassword = await bcyrpt.compare(oldPassword, user.password)
+    if(!checkPassword){
+      return res.status(400).json({
+        success:false,
+        message:"Old Password do not match"
+      })
+    }
+    const encryptedPassword = await bcyrpt.hash(newPassword, 10)
+    const updateNewPass = await User.findByIdAndUpdate({_id:userId}, {
+      password:encryptedPassword
+    }, {new:true})
+
+    return res.status(200).json({
+      success:true, message:"Password changed"
+    })
+    
+  } catch (error) {
+    console.error(error);
+        return res.status(500).json({
+          success: false,
+          message: error.message,
+        });
+  }
 }
