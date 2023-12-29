@@ -98,7 +98,7 @@ const Setting = () => {
         </form>
 
         <div className=" w-full flex items-center justify-center flex-col gap-5">
-          <div className=" flex flex-col gap-2 px-2 w-[50%]">
+          <div className=" flex flex-col gap-2 px-2 w-full lg:w-[50%]">
             <label className=" text-orange-500 font-semibold">
               Enter Whatsapp number
               <sup className=" text-red-500 text-sm">*</sup>
@@ -121,8 +121,8 @@ const Setting = () => {
             Update number
           </button>
         </div>
-        <div className=" flex justify-between w-full">
-        <div className=" flex flex-col gap-2 px-2 w-[50%]">
+        <div className=" flex justify-between items-center lg:gap-0 gap-3 lg:flex-row flex-col w-full">
+        <div className=" flex flex-col gap-2 px-2 w-full lg:w-[50%]">
           <label className=" text-orange-500 font-semibold">
             Enter old password<sup className=" text-red-500 text-sm">*</sup>
           </label>
@@ -136,7 +136,7 @@ const Setting = () => {
             }}
           />
         </div>
-        <div className=" flex flex-col gap-2 px-2 w-[50%]">
+        <div className=" flex flex-col gap-2 px-2 w-full lg:w-[50%]">
           <label className=" text-orange-500 font-semibold">
             Enter new password<sup className=" text-red-500 text-sm">*</sup>
           </label>

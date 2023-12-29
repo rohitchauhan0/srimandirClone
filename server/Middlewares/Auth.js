@@ -9,21 +9,21 @@ exports.auth = async (req, res, next) => {
       req.header("Authorization").replace("Bearer ", "");
     if (!token) {
       return res.satus(400).json({
-        success: true, 
+        success: true,  
         message: "Token not found",
       });
     }
     try {
-      const decode =  jwt.verify(token, process.env.JWT_SECRET);
+      const decode = await  jwt.verify(token, process.env.JWT_SECRET);
       req.user = decode;
+    next()
     } catch (error) {
       console.log(error);
       return res.status(401).json({
-        success: false,
+        success: false, 
         message: "token is invalid", 
-      });
+      }); 
     }
-    next()
   } catch (error) {
     console.log(error);
     return res.status(500).json({

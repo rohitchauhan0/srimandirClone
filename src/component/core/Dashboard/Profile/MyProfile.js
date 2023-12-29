@@ -29,7 +29,7 @@ const MyProfile = () => {
   
 
   return (
-    <div className=' flex flex-col items-center justify-center gap-10'>
+    <div className=' flex flex-col items-center justify-center gap-10 lg:px-0 px-5 '>
         <h1 className=' text-3xl font-bold text-orange-500'>My profile</h1>
         <div className=' w-full flex p-3 gap-5 flex-wrap border border-gray-500 rounded-xl flex-col items-center'>
            <div className=' flex flex-col gap-3 items-center'>

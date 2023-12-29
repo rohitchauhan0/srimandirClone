@@ -36,16 +36,16 @@ const MyBenefits = () => {
         }
     }
   return (
-    <div className=' flex flex-col items-center justify-center gap-10'>
-    <h1 className=' text-3xl font-bold text-orange-500'>My package</h1>
-    <div className=' w-full flex p-3 gap-5 flex-wrap border border-gray-500 rounded-xl'>
+    <div className=' flex flex-col items-center justify-center gap-10 lg:px-0 px-2'>
+    <h1 className=' text-3xl font-bold text-orange-500'>All Benefits</h1>
+    <div className=' w-full flex p-3 gap-5 flex-wrap border border-gray-500 rounded-xl '>
         {
             benefitDetails.map((data, index)=>{
-                return <div key={ index} className=' w-[300px] h-[350px] flex  gap-3 bg-orange-300 rounded-xl p-3'>
+                return <div key={ index} className='w-[300px] h-fit  flex  gap-3  rounded-xl p-3'>
                     <img src={data.icons} alt="" className=' w-[90px] h-[90px] object-cover rounded-full ' />
                     <div className=' flex items-center gap-3 flex-col'>
                         <h2 className=' text-xxl font-bold'>{data.title}</h2>
-                        <p className=' text-sm text-gray-500'>{data.description}</p>
+                        <p className=' text-sm text-gray-500'>{data.description?.slice(0, 20)}....</p>
                         <button className=' flex items-center gap-2 bg-red-500 p-2'
                 onClick={()=> handleDelete(data._id)}
                 >Delete<RiDeleteBin7Line /></button>

@@ -75,12 +75,15 @@ const PaymentPage = () => {
       setofferingItems([...offeringItems,id])
 
     }
+    toast.success("Item added")
   };
   const handleremove = (index) => {
     const updatedItems = addeditems.filter((_, i) => i !== index);
     const updatedItemsId = offeringItems.filter((_, i) => i !== index);
     setaddeditems(updatedItems);
     setofferingItems(updatedItemsId)
+    toast.success("Item removed")
+
   };
 
   const totalPrice = addeditems.reduce((total, detail) => total + detail.price, 0) + packageDetails.price;
@@ -90,7 +93,7 @@ const PaymentPage = () => {
     bookPuja(token, poojaId, packageId,offeringItems, navigate, dispatch, totalPrice, user )
     }
     else{
-      toast.error("You cann't book pooja")
+      toast.error("Admin cann't book pooja")
     }
   }
 
@@ -100,8 +103,8 @@ const PaymentPage = () => {
     <div className=" w-full min-h-screen max-w-screen-xl mx-auto pt-20 flex flex-col gap-3">
       <h1 className=" text-2xl font-bold">Review Booking</h1>
       <hr className=" w-full h-[1px] bg-gray-500" />
-      <div className=" flex gap-10 mt-10 h-full">
-        <div className=" w-[40%] flex flex-col gap-5 pb-20">
+      <div className=" flex lg:flex-row flex-col-reverse gap-10 mt-10 h-full">
+        <div className=" lg:w-[40%] flex flex-col gap-5 pb-20">
           <div className=" flex flex-col gap-2 p-3 border border-gray-400 rounded-xl bg-gray-50">
             <h2 className=" text-2xl font-bold">{poojadetail.title}</h2>
             <p className=" text-xl font-semibold text-gray-500">
@@ -152,7 +155,7 @@ const PaymentPage = () => {
             </button>
         </div>
        
-       <div className=" w-[40%] flex flex-col gap-5">
+       <div className=" lg:w-[40%] flex flex-col gap-5">
         <h1 className=" text-2xl font-bold">Add more offering items</h1>
         <div className=" flex flex-col gap-6">
             {

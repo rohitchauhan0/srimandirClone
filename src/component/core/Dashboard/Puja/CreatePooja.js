@@ -4,10 +4,10 @@ import RenderStep from './RenderStep'
 const CreatePooja = () => {
   return (
     <div className=' flex w-full justify-between'>
-            <div className=' w-[45%] h-full'>
+            <div className='lg:w-[45%] w-full lg:px-0 px-6 h-full'>
                 <RenderStep/>
             </div>
-            <div className=' w-[45%] h-full mt-32'>
+            <div className=' w-[45%] h-full mt-32 lg:block hidden'>
                 <ul className=' flex flex-col text-lg font-bold gap-3 list-disc'>
                     <li>Fill all feilds carefully</li>
                     <li>Upload image in high quality</li>

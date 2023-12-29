@@ -16,7 +16,6 @@ const PaymentCard = ({poojaId}) => {
      const getPackgeDetails = async()=>{
         try {
             const response = await apiConnector("GET", GET_ALL_PACKAGE_API)
-            console.log(response.data.data)
             setpackageDetails(response.data.data)
 
         } catch (error) {
@@ -45,7 +44,6 @@ const PaymentCard = ({poojaId}) => {
             <div className=" grid gap-9 sm:grid-cols-2 lg:grid-cols-4 mt-5">
                 {
                     packageDetails.map((data, index)=>{
-                        console.log(index)
                        return <div key={ index} className={`${index === 0 ? " border-orange-500 text-orange-500" : index === 1? " border-blue-500 text-blue-600" : index===2 ? " border-red-500 text-red-600" : " border-purple-500 text-purple-600"} flex flex-col  gap-3 border rounded-xl`}>
                        <div className=' flex flex-col items-center p-3 clear-start gap-3 rounded-xl' style={index === 0 ? containerStyles : index === 1? containerStyles2 : index===2 ? containerStyles3 : containerStyles4}>
                         <p className=' text-3xl font-bold'>₹ {data.price}</p>

@@ -48,9 +48,14 @@ const RenderStep = () => {
                   step > data.id ? " text-white" : " text-black"
                 }`}
               >
-                  <div className={`${step > data.id ? " text-orange-500":" text-black" }`}>
+                  <div className={`${step > data.id ? " text-orange-500":" text-black" } lg:block hidden`}>
                                     {
                                         data.id < 3 ? (<span>...............................</span>) : ("")
+                                    }
+                                </div> 
+                                <div className={`${step > data.id ? " text-orange-500":" text-black" } lg:hidden block`}>
+                                    {
+                                        data.id < 3 ? (<span>...........</span>) : ("")
                                     }
                                 </div>
               </div>

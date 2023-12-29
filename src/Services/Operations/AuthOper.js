@@ -57,6 +57,28 @@ export function signUp(fullName, email,phoneNum, password, confirmPassword, acco
 }
 
 
+// function setTokenWithExpiration(token) {
+//     const now = new Date();
+//     const expirationDate = new Date(now.getTime() + 3 * 24 * 60 * 60 * 1000);
+//     localStorage.setItem('token', JSON.stringify({ token, expirationDate: expirationDate.getTime() }));
+//   }
+  
+//   function removeExpiredToken() {
+//     const storedToken = localStorage.getItem('token');
+//     if (storedToken) {
+//       const { token, expirationDate } = JSON.parse(storedToken);
+//       const now = new Date().getTime();
+//       if (now > expirationDate) {
+//         localStorage.removeItem('token');
+//       }
+//     }
+//   }
+  
+
+//   removeExpiredToken();
+
+
+
 export function login(email, password, navigate){
     return async(dispatch)=>{
         try {
@@ -74,6 +96,8 @@ export function login(email, password, navigate){
             dispatch(setToken(response.data.token))
             dispatch(setUser({...response.data.user}))
             localStorage.setItem("token", JSON.stringify(response.data.token))
+            // setTokenWithExpiration(response.data.token)
+    
             localStorage.setItem("user", JSON.stringify(response.data.user))
             navigate("/dashboard/my-profile")
             dispatch(setFromType("login"))

@@ -39,20 +39,19 @@ const PoojaById = () => {
 
   return (
     <div className=" w-full min-h-screen max-w-screen-xl mx-auto ">
-      <div className=" flex items-center justify-between h-full">
-        <div className=" w-[45%]">
+      <div className=" flex items-center lg:flex-row flex-col justify-center lg:justify-between h-full">
+        <div className=" w-full lg:w-[45%] ">
           <PoojaSwiper poojaDetails={poojadetail} />
         </div>
-        <div className=" w-[45%] h-full flex flex-col gap-10 ">
-          <h2 className=" text-4xl font-bold">{poojadetail.title}.....</h2>
-          <div className=" flex flex-col gap-4">
-            <div className=" flex gap-4 text-[22px] items-center text-gray-500">
+        <div className=" lg:w-[45%] h-full flex flex-col gap-10 ">
+          <h2 className=" text-2xl lg:text-4xl font-bold">{poojadetail.title}.....</h2>
+          <div className=" flex flex-col items-center gap-4">
+            <div className=" flex gap-4 text-[22px] items-center justify-center text-gray-500">
               <GiByzantinTemple className=" text-orange-500" />
               {poojadetail.address}
             </div>
-            <div className=" text-gray-500 flex  gap-4 text-[17px]">
               <Timer targetDate={targetDate} />
-            </div>
+
             <p className=" text-lg">
               Till now{" "}
               <span className=" text-orange-500">1,00,000+Devotees</span> have
@@ -70,7 +69,7 @@ const PoojaById = () => {
       </div>
       <div className=" w-full min-h-screen flex flex-col gap-8">
         <div className="flex flex-col gap-3">
-          <h2 className=" text-4xl font-bold">{poojadetail.title}</h2>
+          <h2 className="text-2xl lg:text-4xl font-bold">{poojadetail.title}</h2>
           <p className=" text-gray-500 text-lg">{poojadetail.description}</p>
         </div>
         <div className=" w-full h-4 bg-gray-300 bg-opacity-60">
@@ -96,10 +95,10 @@ const PoojaById = () => {
         <div className=" w-full h-4 bg-gray-300 bg-opacity-60"></div>
         <div className=" flex flex-col gap-4 py-7">
             <h2 className=" text-4xl font-bold">{poojadetail.templeName}</h2>
-            <div className=" flex items-center justify-between w-full" >
-                <img src={poojadetail.image2} alt="" className=" w-[45%] h-[70%] object-cover rounded-xl" />
+            <div className=" flex items-center lg:flex-row flex-col justify-between w-full" >
+                <img src={poojadetail.image2} alt="" className=" w-full lg:w-[45%] h-[70%] object-cover rounded-xl" />
                 <div className=" w-full flex flex-col items-center  gap-4 px-10">
-                <pre className=" w-full text-gray-500" style={{whiteSpace:"pre-wrap"}}>{poojadetail.templeDetail}</pre>
+                <pre className=" w-full text-gray-500 text-sm leading-5" style={{whiteSpace:"pre-wrap"}}>{poojadetail.templeDetail}</pre>
                <div className=" flex flex-col gap-2 bg-slate-200 p-2 rounded-xl">
                <p>{poojadetail.personName}</p>
                <p>with {poojadetail.personExperience} of experience</p>

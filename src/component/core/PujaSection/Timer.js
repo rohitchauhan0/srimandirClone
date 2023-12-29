@@ -35,18 +35,18 @@ const Timer = ({targetDate}) => {
         <div>
           {days !== undefined ? (
            <div className=' flex items-center gap-5'>
-            <div className=' flex bg-orange-200 items-end p-3 rounded-xl gap-3'>
-                <p className=' text-4xl font-bold '>{days}</p>
+            <div className='  flex bg-orange-200 lg:flex-row flex-col items-center lg:items-end lg:p-3 p-1 rounded-xl gap-1 lg:gap-3'>
+                <p className=' text-lg lg:text-4xl font-bold '>{days}</p>
                 <p>Days</p>
             </div> 
-            <div className=' flex bg-orange-200 items-end p-3 rounded-xl gap-3'>
-                <p className=' text-4xl font-bold '>{hours}</p>
+            <div className=' flex bg-orange-200 lg:flex-row flex-col items-center lg:items-end lg:p-3 p-1 rounded-xl gap-1 lg:gap-3'>
+                <p className='  text-lg lg:text-4xl font-bold '>{hours}</p>
                 <p>Hours</p>
-            </div> <div className=' flex bg-orange-200 items-end p-3 rounded-xl gap-3'>
-                <p className=' text-4xl font-bold '>{minutes}</p>
+            </div> <div className=' flex bg-orange-200 lg:flex-row flex-col items-center lg:items-end lg:p-3 p-1 rounded-xl gap-1 lg:gap-3'>
+                <p className='  text-lg lg:text-4xl font-bold '>{minutes}</p>
                 <p>Minutes</p>
-            </div> <div className=' flex bg-orange-200 items-end p-3 rounded-xl gap-3'>
-                <p className=' text-4xl font-bold '>{seconds}</p>
+            </div> <div className=' flex bg-orange-200 lg:flex-row flex-col items-center lg:items-end lg:p-3 p-1 rounded-xl gap-1 lg:gap-3'>
+                <p className=' text-lg lg:text-4xl font-bold '>{seconds}</p>
                 <p>Seconds</p>
             </div>
            </div>

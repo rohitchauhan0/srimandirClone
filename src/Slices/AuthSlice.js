@@ -6,6 +6,8 @@ const intialState = {
     formType:"login"
 }
 
+
+
 const authSlice = createSlice({
     name:"auth",
     initialState:intialState,

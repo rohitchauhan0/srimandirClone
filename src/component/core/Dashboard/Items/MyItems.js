@@ -44,11 +44,11 @@ const MyItems = () => {
     <div className=' w-full flex p-3 gap-5 flex-wrap border border-gray-500 rounded-xl'>
         {
             itemDetails.map((data, index)=>{
-                return <div key={ index} className=' flex items-center gap-3 bg-orange-300 rounded-xl p-3'>
+                return <div key={ index} className=' flex items-center lg:flex-row flex-col gap-3rounded-xl p-3'>
                     <img src={data.icon} alt="" className=' w-[200px] h-full object-cover' />
                     <div className=' flex items-center justify-between flex-col h-full'>
-                        <h2 className=' text-2xl font-bold'>{data.title}</h2>
-                        <p className=' text-sm text-gray-500'>{data.description}</p>
+                        <h2 className=' text-2xl font-bold'>{data.title?.slice(0,20)}...</h2>
+                        <p className=' text-sm text-gray-500'>{data.description?.slice(0, 20)}...</p>
                         <p className=' text-green-500'>₹{data.price}</p>
                         <button className=' flex items-center gap-2 bg-red-500 p-2'
                 onClick={()=> handleDelete(data._id)}

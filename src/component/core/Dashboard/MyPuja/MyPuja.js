@@ -37,10 +37,10 @@ const MyPuja = () => {
   return (
   <>
       <div className=' mt-20 flex gap-10 flex-col justify-center'>
-      <div className=" grid gap-9 sm:grid-cols-2 lg:grid-cols-3 mt-5">
+      <div className=" grid gap-9 sm:grid-cols-2 lg:grid-cols-3 place-items-center mt-5">
         {
             pujaDetails.map((data, index)=>{
-              return <div key={index} className=' flex flex-col gap-3 w-[250px] h-fit rounded-xl p-2 border border-gray-500'>
+              return <div key={index} className=' flex flex-col gap-3 w-[95%] lg:w-[250px] h-fit rounded-xl p-2 border border-gray-500'>
                 <img src={data.image1} alt="" className=' w-full h-full rounded-xl max-h-[250px] object-cover' />
                 <p>{data.title}</p>
                 <p><span className=' text-orange-500 font-bold'>Created at:</span> {data.createdAt.split("T")[0]}</p>

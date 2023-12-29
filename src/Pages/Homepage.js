@@ -38,25 +38,21 @@ const Homepage = () => {
   return (
     <div className=" flex items-center justify-between flex-col min-h-screen">
       <div className=" w-full bg-orange-50">
-        <div className=" max-w-screen-xl px-8 lg:px-3 py-14 flex items-center mt-12 justify-between pt-32 mx-auto gap-3 ">
-          <div className=" w-[60%] flex flex-col gap-6">
-            <p className=" text-4xl font-bold w-[60%]  leading-snug">
+        <div className=" max-w-screen-xl px-8 lg:px-3 py-14 flex lg:flex-row flex-col-reverse items-center mt-12 justify-between pt-32 mx-auto gap-3 ">
+          <div className=" w-full lg:w-[60%] flex flex-col gap-6">
+            <p className=" text-2xl lg:text-4xl font-bold w-full lg:w-[60%]  leading-snug">
               Pray daily with
               <span className=" text-orange-500"> Sri Mandir</span> One App for
               all your devotional needs.
             </p>
-            <p className=" w-[70%] text-xl text-gray-600 leading-snug">
+            <p className=" w-full lg:w-[70%] text-xl text-gray-600 leading-snug">
               Set up Temples. Listen to Devotional music. Get free Panchang and
               Kundali. Updates on every Fasts and Festivals. Trusted by 10
               million+ people.
             </p>
 
-            <div className=" flex items-center gap-6 py-3">
-              <PlayStore />
-              <Apple />
-            </div>
           </div>
-          <div className=" w-[40%]">
+          <div className=" w-full lg:w-[40%]">
             <img src={banner} alt="" className=" w-full h-full object-cover" />
           </div>
         </div>
@@ -79,8 +75,8 @@ const Homepage = () => {
         </div>
         <div className=" grid gap-9 sm:grid-cols-2 lg:grid-cols-3">
         {
-                poojaDetails.slice(0,3).map((data)=>{
-                  return  <Card
+                poojaDetails.slice(0,3).map((data, index)=>{
+                  return  <Card key={index}
             image={data.image1}
             title={
               data.title
@@ -92,23 +88,7 @@ const Homepage = () => {
                 })
               }
 
-         
-          {/* <Card
-            image={photo2}
-            title={
-              " Friday Special Sarva Manokamana Purti Shri Kameshwari Tanotrokta Maha Puja"
-            }
-            text1={"Shri Shaktipeeth Kamakhya Tirtha, Guwahati"}
-            text2={"19 January, Friday,  Friday Special"}
-          />
-          <Card
-            image={photo3}
-            title={
-              "Paush Krishna Dwitiya Special Maa Baglamukhi Sarva Karya Siddhi Tantrokta Yagya and Siddh Peeth Aarti "
-            }
-            text1={"Shri Baglamukhi Temple, Shri Kamakhya Tirtha,  Guwahati"}
-            text2={"28 December, Thursday, Paush Krishna Dwitiya"}
-          /> */}
+
         </div>
       </div>
 
@@ -169,9 +149,9 @@ const Homepage = () => {
         </div>
       </div>
 
-      <div className="w-full bg-gradient-to-r from-[#121f36] to-[#162e59] ">
-        <div className="items-center flex justify-between py-8 px-4 md:px-0 mx-auto max-w-screen-xl   lg:py-12 lg:px-0">
-          <div className=" flex flex-col gap-6 w-[50%] h-full  justify-center">
+      <div className="w-full bg-gradient-to-r  from-[#121f36] to-[#162e59] ">
+        <div className="items-center flex lg:flex-row flex-col justify-between py-8 px-4 md:px-0 mx-auto max-w-screen-xl   lg:py-12 lg:px-0">
+          <div className=" flex flex-col gap-6 lg:w-[50%] h-full w-full  justify-center">
             <p className=" text-[#72A0F1] font-bold leading-25 text-18">
               Trusted by Over 10 Million Devotees in India and 100,000+ NRIs.
             </p>
@@ -185,7 +165,7 @@ const Homepage = () => {
             </p>
           </div>
 
-          <div className="col-span-2 space-y-8 md:grid md:grid-cols-2 md:gap-12 md:space-y-0 w-[50%]  ">
+          <div className="col-span-2 space-y-8 md:grid md:grid-cols-2 md:gap-12 md:space-y-0  w-full lg:w-[50%]  ">
               <GradientCard icon={blueIcon1} title={"1 Crore+ Devotees"}  textcolor={"text-white"} text={"have trusted us in their devotional journey"}/>  
                <GradientCard icon={blueIcon2} title={"4.6 star rating"}  textcolor={"text-white"} text={"Over 1 Lakh devotees express their love for us on playstore"}/>  
                 <GradientCard icon={blueIcon3} title={"5000+ Music Collection"}  textcolor={"text-white"} text={"Listen to your favourite Bhajans, Chalisa, Mantra and Aarti AD-Free"}/>

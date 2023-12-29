@@ -34,8 +34,8 @@ const CreateItem = () => {
     }
   return (
     <div className=' w-full flex items-center justify-center flex-col gap-4'>
-        <h1 className=' text-3xl font-bold uppercase'>Add Offering Items here</h1>
-        <form className=' w-[40%] flex flex-col gap-3 p-3' onSubmit={handleSubmit(onSubmit)}>
+        <h1 className=' text-lg lg:text-3xl font-bold uppercase'>Add Offering Items here</h1>
+        <form className=' w-[98%] lg:w-[40%] flex flex-col gap-3 p-3' onSubmit={handleSubmit(onSubmit)}>
         <div>
             <ImageUpload setValue={setValue} register={register} errors={errors} name={"icon"} label={"Add image"} />
         </div>

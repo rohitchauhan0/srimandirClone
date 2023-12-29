@@ -37,11 +37,11 @@ const CreatePackage = () => {
   };
   return (
     <div className=" w-full flex items-center justify-center flex-col gap-4">
-      <h1 className=" text-3xl font-bold uppercase">
+      <h1 className=" text-lg lg:text-3xl font-bold uppercase">
         Create your package here
       </h1>
       <form
-        className=" w-[40%] flex flex-col gap-3 p-3"
+        className=" w-[98%] lg:w-[40%] flex flex-col gap-3 p-3"
         onSubmit={handleSubmit(onSubmit)}
       >
         <div className=" flex flex-col gap-2 px-2">
