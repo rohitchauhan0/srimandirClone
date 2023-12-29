@@ -84,13 +84,16 @@ const Signup = () => {
           </div>
           
         </div>
+      <div className="lg:block hidden">
 
+     
        {
-        loading? (<div className=" w-full flex items-center justify-center mt-3 "><span className="loader " ></span></div>):( <button className=" w-full bg-[#2F6CE5] text-white font-semibold rounded-full p-2 lg:block hidden">
+        loading? (<div className=" w-full flex items-center justify-center mt-3  "><span className="loader " ></span></div>):( <button className=" w-full bg-[#2F6CE5] text-white font-semibold rounded-full p-2 lg:block hidden">
           Create Account
         </button>)
        }
-        {/* <div className=" lg:hidden block">
+       </div>
+        <div className=" lg:hidden block">
           <div className=" flex justify-between items-center">
           {
             loading ? (<span className="loader"></span>) : (<button className=" w-fit bg-[#2F6CE5] text-white font-semibold rounded-full p-2 px-10">
@@ -99,7 +102,7 @@ const Signup = () => {
         )
           }
           </div>
-        </div> */}
+        </div>
       </form>
     </div>
   );
