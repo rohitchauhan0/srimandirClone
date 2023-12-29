@@ -36,7 +36,9 @@ const Sidebar = () => {
         }
     </div>
     <hr className='w-full h-[2px] bg-gray-600' />
-        <Link className={`${matchRoute("/dashboard/settings" ) ? " text-orange-500":" text-black"} flex items-center gap-3`} to={"/dashboard/settings"}>
+        <Link className={`${matchRoute("/dashboard/settings" ) ? " text-orange-500":" text-black"} flex items-center gap-3`} to={"/dashboard/settings"}
+        onClick={()=> setshowDas(true)}
+        >
         <div className={`${matchRoute("/dashboard/settings" )?" bg-orange-500":" bg-white"} w-[2px] h-full `}></div>
             Settings
         </Link>

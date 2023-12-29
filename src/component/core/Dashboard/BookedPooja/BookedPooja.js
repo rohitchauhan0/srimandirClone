@@ -34,7 +34,7 @@ const BookedPooja = () => {
         {userDetails.map((data, index) => {
             const newtargetDate = new Date(data.poojaId.date).getTime()
           return (
-          <div className=' flex items-center gap-5 w-full justify-between' key={index}>
+          <div className=' flex items-center lg:flex-row flex-col gap-5 w-full justify-between' key={index}>
           <div className=" p-3 rounded-xl border-[1px] border-gray-400 flex flex-col gap-6 min-h-[300px] cursor-pointer"
             >
               <img
