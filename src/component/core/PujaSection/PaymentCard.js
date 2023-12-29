@@ -39,7 +39,7 @@ const PaymentCard = ({poojaId}) => {
       };
     
   return (
-    <div className=" flex flex-col gap-10 py-7">
+    <div className=" flex flex-col gap-10 py-7 lg:px-0 px-3">
          <h2 className=" text-4xl font-bold">Select pooja package</h2>
             <div className=" grid gap-9 sm:grid-cols-2 lg:grid-cols-4 mt-5">
                 {

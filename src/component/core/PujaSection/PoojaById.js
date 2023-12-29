@@ -39,7 +39,7 @@ const PoojaById = () => {
 
   return (
     <div className=" w-full min-h-screen max-w-screen-xl mx-auto ">
-      <div className=" flex items-center lg:flex-row flex-col justify-center lg:justify-between h-full">
+      <div className=" flex items-center lg:flex-row flex-col justify-center lg:justify-between h-full lg:px-0 px-2">
         <div className=" w-full lg:w-[45%] ">
           <PoojaSwiper poojaDetails={poojadetail} />
         </div>
@@ -57,7 +57,7 @@ const PoojaById = () => {
               <span className=" text-orange-500">1,00,000+Devotees</span> have
               participated in Pujas conducted by Sri Mandir Puja Seva.
             </p>
-            <button className=" w-full p-2 rounded-xl bg-green-500 text-white font-bold cursor-pointer flex items-center justify-center "
+            <button className=" w-full p-2 rounded-xl bg-yellow-500 text-white font-bold cursor-pointer flex items-center justify-center "
             onClick={()=> handleScrolltoDiv()}
             >
               <p className=" flex items-center gap-2">
@@ -67,7 +67,7 @@ const PoojaById = () => {
           </div>
         </div>
       </div>
-      <div className=" w-full min-h-screen flex flex-col gap-8">
+      <div className=" w-full min-h-screen flex lg:mt-0 mt-3 flex-col gap-8">
         <div className="flex flex-col gap-3">
           <h2 className="text-2xl lg:text-4xl font-bold">{poojadetail.title}</h2>
           <p className=" text-gray-500 text-lg">{poojadetail.description}</p>
