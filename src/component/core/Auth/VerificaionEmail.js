@@ -27,8 +27,8 @@ const VerificaionEmail = () => {
     <input
       {...props}
       style={{
-        width: '40px',
-        height: '40px',
+        width: '35px',
+        height: '35px',
         fontSize: '18px',
         textAlign: 'center',
         border: '1px solid #ccc',
