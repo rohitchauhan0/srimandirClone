@@ -6,7 +6,7 @@ import { Autoplay, Pagination } from "swiper/modules";
 
 const PoojaSwiper = ({ poojaDetails }) => {
   return (
-    <div className="h-full flex items-center justify-center lg:min-h-screen">
+    <div className="h-full flex items-center justify-center lg:min-h-screen lg:mt-0 mt-20">
       <Swiper
         slidesPerView={1}
         spaceBetween={30}
