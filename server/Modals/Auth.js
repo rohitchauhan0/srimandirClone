@@ -30,7 +30,7 @@ const AuthModal = new mongoose.Schema({
     pooja:[
         {
             type:mongoose.Schema.Types.ObjectId,
-            ref:"pooja"
+            ref:"payment"
         }
     ],
     image:{

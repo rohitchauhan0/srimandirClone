@@ -29,6 +29,7 @@ export const packageEnPoints = {
         CREATE_PACKAGE_API : BASE_URL + "/package/createPackage",
         GET_ALL_PACKAGE_API : BASE_URL + "/package/getAllPackage",
         DELTE_PACKAGE_API : BASE_URL + "/package/deletePackage",
+        GET_PACKAGE_BY_ID_API : BASE_URL + "/package/getPackageById",
 }
 
 
@@ -36,4 +37,10 @@ export const itemEndPoints = {
         CREATE_ITEM_API : BASE_URL + "/item/createItem",
         GET_ALL_ITEM_API : BASE_URL + "/item/getItem",
         DELTE_ITEM_API : BASE_URL + "/item/deleteItem",
+}
+
+export const paymentEndPoint = {
+        CREATE_PAYMENT_API : BASE_URL + "/payment/capturePayment",
+        VERIFY_PAYMENT_API : BASE_URL + "/payment/verifyPayment",
+        GET_ALL_PAYMENT_API : BASE_URL + "/payment/paymentDetail",
 }

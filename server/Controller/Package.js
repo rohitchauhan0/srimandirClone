@@ -39,6 +39,23 @@ exports.getAllPackage = async(req, res)=>{
     }
 }
 
+exports.getPackageDetailById = async(req, res)=>{
+    try {
+        const {packageId} = req.body
+        const getDetails = await PoojaPackage.findById({_id:packageId})
+        return res.status(200).json({
+            success:true,
+            data:getDetails
+        })
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({
+          success: false,
+          message: error.message,
+        });
+    }
+}
+
 
 exports.deletePackage = async(req, res)=>{
     try {

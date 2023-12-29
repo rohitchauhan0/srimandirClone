@@ -61,6 +61,12 @@ export const DASHBOARD_LINK = [
         title:"Enrolled user",
         accountType: ACCOUNT_TYPE.ADMIN,
     path:"/dashboard/Enrolled-user",
+    },
+    {
+        id:11,
+        title:"Booked pooja",
+        accountType: ACCOUNT_TYPE.USER,
+    path:"/dashboard/booked-pooja",
     }
 
 ]

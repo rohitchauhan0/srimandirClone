@@ -47,14 +47,13 @@ const Step2 = () => {
     dispatch(setSteps(3));
   };
 
-  console.log(poojaBenefits)
 
   return (
     <div className=" flex flex-col gap-10">
       <div className=" mt-10 border border-gray-500 p-3 rounded-xl flex flex-col gap-4 flex-wrap">
         {benefits.map((data, index) => {
           return (
-            <div className=" w-[300px] h-fit flex gap-2 border border-gray-500 p-3 rounded-xl">
+            <div className=" w-[300px] h-fit flex gap-2 border border-gray-500 p-3 rounded-xl" key={index}>
               <img
                 src={data.icons}
                 alt=""

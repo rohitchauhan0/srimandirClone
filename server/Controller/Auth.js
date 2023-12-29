@@ -4,6 +4,7 @@ const bcyrpt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const otpGenerator = require("otp-generator");
 const { uploadImageToCloudinary } = require("../Utils/uploadImage");
+let validator = require('email-validator')
 
 exports.signUp = async (req, res) => {
   try {
@@ -16,7 +17,6 @@ exports.signUp = async (req, res) => {
       otp,
       accountType,
     } = req.body;
-    console.log(password, confirmPassword)
 
     const existingUser = await User.findOne({ email });
     if (existingUser) {
@@ -29,7 +29,7 @@ exports.signUp = async (req, res) => {
     if (password !== confirmPassword) {
       return res.status(200).json({
         success: false,
-        message: "Password do not match",
+        message: "Password do not match", 
       });
     }
 
@@ -77,7 +77,7 @@ exports.signUp = async (req, res) => {
 exports.sendOtp = async (req, res) => {
   try {
     const { email } = req.body;
-    console.log(email)
+
     const checkUser = await Otp.findOne({ email });
     if (checkUser) {
       return res.status(400).json({
@@ -124,7 +124,7 @@ exports.login = async (req, res) => {
     let user = await User.findOne({ email });
 
     if (!user) {
-      res.json({
+     return res.json({
         success: false,
         message: "User not found",
       });
@@ -141,7 +141,6 @@ exports.login = async (req, res) => {
         expiresIn: "24h",
       });
 
-      user = user.toObject();
       user.token = token;
       user.password = undefined;
       const options = {
@@ -155,14 +154,14 @@ exports.login = async (req, res) => {
         message: "User logged in successfully",
       });
     } else {
-      res.status(401).json({
+     return res.status(401).json({
         success: false,
-        message: "Password do not matched",
+        message: "Password is incorrect",
       });
     }
   } catch (error) {
     console.error(error);
-    return res.status(500).json({
+    return res.status(500).json({ 
       success: false,
       message: `Login Failure Please Try Again`,
     });
@@ -217,7 +216,13 @@ exports.updatePhoneNum = async(req, res)=>{
 exports.getuserDetailById = async(req, res)=>{
     try {
         const userId = req.user.id
-        const userDetails = await User.findById({_id:userId})
+        const userDetails = await User.findById({ _id: userId })
+        .populate([
+          { path: "pooja", populate: { path: "packageId" } },
+          { path: "pooja", populate: { path: "poojaId" } },
+          { path: "pooja", populate: { path: "offeringItem" } }
+        ])
+        .exec();
         return res.status(200).json({
             success:true,
             data:userDetails
@@ -260,4 +265,4 @@ exports.changePassword = async(req, res)=>{
           message: error.message,
         });
   }
-}
+} 

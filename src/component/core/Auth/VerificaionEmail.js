@@ -10,7 +10,6 @@ const VerificaionEmail = () => {
 
     const [otp, setotp] = useState("")
     const dispatch = useDispatch()
-    console.log(signupData)
     const accountType = "User"
     const handleOnSubmit = (e)=>{
         e.preventDefault()

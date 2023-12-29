@@ -4,10 +4,13 @@ import { apiConnector } from '../../../Services/ApiConnector'
 import { FaDotCircle } from "react-icons/fa";
 import { FaArrowRight } from 'react-icons/fa6';
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import toast from 'react-hot-toast';
 
 const PaymentCard = ({poojaId}) => {
     const {GET_ALL_PACKAGE_API} = packageEnPoints
     const [packageDetails, setpackageDetails] = useState([])
+    const {token} = useSelector((state)=> state.auth)
     const navigate = useNavigate()
     useEffect(() => {
      const getPackgeDetails = async()=>{
@@ -56,7 +59,9 @@ const PaymentCard = ({poojaId}) => {
                         </ul>
                         <button className=" w-full p-2 rounded-xl bg-green-500 text-white font-bold cursor-pointer flex items-center justify-center ">
                <p className=" flex items-center gap-2"
-               onClick={()=> navigate(`/puja/${poojaId}/${data._id}`)}
+               onClick={()=> {
+                token !== null ? navigate(`/puja/${poojaId}/${data._id}`) : toast.error("Please login to continue")
+               }}
                >Participate <FaArrowRight /></p>
              </button>
                        </div>

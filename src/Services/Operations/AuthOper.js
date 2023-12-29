@@ -3,11 +3,17 @@ import { authEndPoints } from "../AllApi";
 import { apiConnector } from "../ApiConnector";
 import { setFromType, setLoading, setToken } from "../../Slices/AuthSlice";
 import { setUser } from "../../Slices/ProfileSlice";
+import  EmailValidator from 'email-validator';
 
 const {SIGNUP_API, LOGIN_API, SEND_OTP_API}= authEndPoints
 
 export function sendOtp(email){
     return async(dispatch)=>{
+        if(!EmailValidator.validate(email)){
+            toast.error("Please enter valid email")
+            return
+        }
+        
         const toastId = toast.loading("Please wait...")
         dispatch(setLoading(true))
         try {
@@ -29,6 +35,10 @@ export function sendOtp(email){
 
 export function signUp(fullName, email,phoneNum, password, confirmPassword, accountType, otp){
     return async(dispatch)=>{
+        if(!EmailValidator.validate(email)){
+            toast.error("Please enter valid email")
+            return
+        }
         const toastId = toast.loading("Please wait...")
         dispatch(setLoading(true))
         try {
@@ -56,7 +66,9 @@ export function login(email, password, navigate){
             const response = await apiConnector("POST", LOGIN_API, {email, password})
             if(!response.data.success){
                 toast.error(response.data.message)
+                console.log(response.data.message)
                 throw new Error(response.data.message)
+                // return
             }
             toast.success("Login Successfull")
             dispatch(setToken(response.data.token))
@@ -73,7 +85,7 @@ export function login(email, password, navigate){
         toast.dismiss(toastId)
             
         } catch (error) {
-      console.log("LOGIN API ERROR............", error)
+      console.log("LOGIN API ERROR............", error.data.message)
         }
     }
 }

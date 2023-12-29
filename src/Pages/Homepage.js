@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import banner from "../Assets/img_hero_artwork_en.webp";
 import Apple from "../component/core/Homecomponent/Apple";
 import PlayStore from "../component/core/Homecomponent/PlayStore";
 import { FaArrowRight } from "react-icons/fa6";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Card from "../component/core/Homecomponent/Card";
 import photo1 from "../Assets/photo1.webp";
 import photo2 from "../Assets/photo2.webp";
@@ -17,8 +17,24 @@ import blueIcon1 from "../Assets/blueicon1.svg"
 import blueIcon2 from "../Assets/blueicon2.svg"
 import blueIcon3 from "../Assets/blueicon3.svg"
 import blueIcon4 from "../Assets/blueicon4.svg"
+import { apiConnector } from "../Services/ApiConnector";
+import { pujaEndPoints } from "../Services/AllApi";
 
 const Homepage = () => {
+  const { GET_ALL_PUJA_API } = pujaEndPoints;
+  const [poojaDetails, setpoojaDetails] = useState([]);
+  const navigate = useNavigate()
+  useEffect(() => {
+    const getDetails = async () => {
+      try {
+        const response = await apiConnector("GET", GET_ALL_PUJA_API);
+        setpoojaDetails(response.data.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getDetails();
+  }, []);
   return (
     <div className=" flex items-center justify-between flex-col min-h-screen">
       <div className=" w-full bg-orange-50">
@@ -57,20 +73,27 @@ const Homepage = () => {
             with divine blessings.
           </p>
           <Link className=" flex items-center gap-3 text-orange-600 font-bold">
-            <p className=" hover:underline cursor-pointer">View All Puja</p>
+            <p className=" hover:underline cursor-pointer" onClick={()=> navigate("/puja")}>View All Puja</p>
             <FaArrowRight />
           </Link>
         </div>
         <div className=" grid gap-9 sm:grid-cols-2 lg:grid-cols-3">
-          <Card
-            image={photo1}
+        {
+                poojaDetails.slice(0,3).map((data)=>{
+                  return  <Card
+            image={data.image1}
             title={
-              "Magh Krishna Panchami Special Kalasarpa Dosha Removal Mahapuja and Rudrabhishek"
+              data.title
             }
-            text1={"Shri Sarparaj Takshakeshwar Tirthi, Prayagraj"}
-            text2={"31 January, Wednesday, Magh Krishna Panchami"}
+            text1={data.address}
+            text2={data.date}
+            poojaId={data._id}
           />
-          <Card
+                })
+              }
+
+         
+          {/* <Card
             image={photo2}
             title={
               " Friday Special Sarva Manokamana Purti Shri Kameshwari Tanotrokta Maha Puja"
@@ -85,7 +108,7 @@ const Homepage = () => {
             }
             text1={"Shri Baglamukhi Temple, Shri Kamakhya Tirtha,  Guwahati"}
             text2={"28 December, Thursday, Paush Krishna Dwitiya"}
-          />
+          /> */}
         </div>
       </div>
 
@@ -109,7 +132,9 @@ const Homepage = () => {
           </div>
 
           <div className="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:gap-8 xl:gap-8 md:space-y-0 ">
-            <GradientCard
+
+           
+                  <GradientCard
               gradient={"bg-gradient-to-r from-[#fbc69c] to-[#fde8d7]"}
               icon={icon1}
               title={"Auspicious-Inauspicious timings"}
@@ -117,6 +142,9 @@ const Homepage = () => {
                 "Check out Auspicious and Inauspicious Timings for your city."
               }
             />
+
+
+            
             <GradientCard
               gradient={"bg-gradient-to-r from-[#b4ddff] to-[#e1f1ff]"}
               icon={icon2}

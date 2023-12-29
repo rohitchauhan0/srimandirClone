@@ -37,7 +37,7 @@ const MyPuja = () => {
   return (
   <>
       <div className=' mt-20 flex gap-10 flex-col justify-center'>
-      <div className=' flex gap-5'>
+      <div className=" grid gap-9 sm:grid-cols-2 lg:grid-cols-3 mt-5">
         {
             pujaDetails.map((data, index)=>{
               return <div key={index} className=' flex flex-col gap-3 w-[250px] h-fit rounded-xl p-2 border border-gray-500'>

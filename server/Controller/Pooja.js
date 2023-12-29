@@ -10,7 +10,7 @@ exports.createPooja = async(req, res)=>{
         const image1 = req.files.image1
         const image2 = req.files.image2
         const image3 = req.files.image3
-        const image4 = req.files.image4
+        const image4 = req.files.image4 
         const thumbnail1 = await uploadImageToCloudinary(image1, process.env.FOLDER_NAME)
         const thumbnail2 = await uploadImageToCloudinary(image2, process.env.FOLDER_NAME)
         const thumbnail3 = await uploadImageToCloudinary(image3, process.env.FOLDER_NAME)

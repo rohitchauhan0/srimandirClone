@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import { pujaEndPoints } from "../../../Services/AllApi";
 import { apiConnector } from "../../../Services/ApiConnector";
@@ -21,7 +21,6 @@ const PoojaById = () => {
         const response = await apiConnector("POST", GET_PUJA_BY_ID_API, {
           poojaId,
         });
-        console.log(response.data.data);
         setpoojadetail(response.data.data);
       } catch (error) {
         console.log(error);
@@ -30,6 +29,13 @@ const PoojaById = () => {
     getDetails();
   }, [poojaId]);
   const targetDate = new Date(poojadetail.date).getTime();
+  const targetDiv = useRef(null)
+
+  const handleScrolltoDiv = ()=>{
+    if(targetDiv.current){
+        targetDiv.current.scrollIntoView({behavior:'smooth'})
+    }
+  }
 
   return (
     <div className=" w-full min-h-screen max-w-screen-xl mx-auto ">
@@ -52,7 +58,9 @@ const PoojaById = () => {
               <span className=" text-orange-500">1,00,000+Devotees</span> have
               participated in Pujas conducted by Sri Mandir Puja Seva.
             </p>
-            <button className=" w-full p-2 rounded-xl bg-green-500 text-white font-bold cursor-pointer flex items-center justify-center ">
+            <button className=" w-full p-2 rounded-xl bg-green-500 text-white font-bold cursor-pointer flex items-center justify-center "
+            onClick={()=> handleScrolltoDiv()}
+            >
               <p className=" flex items-center gap-2">
                 Participate <FaArrowRight />
               </p>
@@ -100,7 +108,9 @@ const PoojaById = () => {
             </div>
             </div>
         
-        <PaymentCard poojaId={poojaId}/>
+        <div ref={targetDiv}>
+        <PaymentCard poojaId={poojaId} />
+        </div>
            </div>
 
         

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import logo from "../../Assets/img_sm_logo_en_dark.svg"
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, matchPath, useLocation, useNavigate } from 'react-router-dom'
 import { NavLinks } from '../../Data/NavbarLink'
 import { FaAngleDown } from "react-icons/fa6";
 import { libraryLinks } from '../../Data/LibraryText';
@@ -32,6 +32,12 @@ const Navbar = () => {
         }
         getUserDetail()
     }, [])
+
+    const location = useLocation()
+
+    const matchRoute = (route)=>{
+        return matchPath({path:route}, location.pathname)
+    }
     
   return (
    <>
@@ -44,7 +50,7 @@ const Navbar = () => {
                 <div className=' flex items-center flex-row space-x-8 text-[17px]  font-semibold  '>
                     {
                         NavLinks.map((data)=>{
-                            return <Link className=' hover:text-orange-700 transition-all duration-200' to={data.path} key={data.id}>
+                            return <Link className={` ${matchRoute(`${data.path}`) ? " text-orange-500":" text-black"} hover:text-orange-700 transition-all duration-200`} to={data.path} key={data.id}>
                                 {
                                     data.title === "Library" ? (<div className=' flex items-center gap-2 relative' onClick={()=> setshowLibrary(!showLibrary)}><p>Library</p>
                                     <FaAngleDown  />

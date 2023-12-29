@@ -5,6 +5,7 @@ const authRoutes = require('./Routes/AuthRoutes')
 const pujaRoutes = require('./Routes/PoojaRoutes')
 const packageRoutes = require('./Routes/PackageRoute')
 const itemRoutes = require('./Routes/OfferingItemRoutes')
+const paymentRoutes = require('./Routes/PaymentRoute')
 require('dotenv').config()
  
 
@@ -34,6 +35,7 @@ app.use("/api/v1/auth", authRoutes)
 app.use("/api/v1/puja", pujaRoutes)
 app.use("/api/v1/package", packageRoutes)
 app.use("/api/v1/item", itemRoutes)
+app.use("/api/v1/payment", paymentRoutes)
 
 
 
