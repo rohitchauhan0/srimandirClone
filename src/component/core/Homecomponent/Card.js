@@ -8,7 +8,7 @@ const Card = ({ image, title, text1, text2, poojaId }) => {
   const navigate = useNavigate()
 
   return (
-    <div className=" p-3 rounded-xl border-[1px] border-gray-400 flex flex-col justify-between min-h-[550px] cursor-pointer"
+    <div className=" p-3 rounded-xl border-[1px] border-gray-400 flex flex-col justify-between min-h-[450px] cursor-pointer"
     onClick={()=> navigate(`/puja/${poojaId}`)}
     >
       <img src={image} alt="" className=" w-full rounded-xl max-h-[168px] object-cover" />

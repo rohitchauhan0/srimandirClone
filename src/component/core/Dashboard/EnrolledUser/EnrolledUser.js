@@ -16,7 +16,7 @@ const EnrolledUser = () => {
             const response = await apiConnector("GET", GET_ALL_PAYMENT_API, null, {
                 Authorization:`Bearer ${token}`
             })
-            setpaymentDetails(response.data.data)
+            setpaymentDetails(response?.data?.data)
             
         } catch (error) {
             console.log(error)
@@ -24,6 +24,8 @@ const EnrolledUser = () => {
      }
      getDetail()
     }, [])
+
+    console.log(paymentDetails)
     
   return (
     <div className=' w-full flex items-center justify-center flex-col gap-4'>
@@ -31,30 +33,30 @@ const EnrolledUser = () => {
    {
     paymentDetails.length > 0 ? ( <div className=' w-full flex p-3 gap-5 flex-wrap border border-gray-500 rounded-xl'>
     <div className=" flex flex-col gap-10">
-        {paymentDetails.map((data, index) => {
-            const newtargetDate = new Date(data.poojaId.date).getTime()
+        {paymentDetails?.map((data, index) => {
+            const newtargetDate = new Date(data.poojaId?.date).getTime()
           return (
           <div className=' flex items-center lg:flex-row flex-col gap-5 w-full justify-between' key={index}>
           <div className=" p-3 rounded-xl border-[1px] border-gray-400 flex flex-col gap-6 min-h-[300px] cursor-pointer"
             >
               <img
-                src={data.poojaId.image1}
+                src={data.poojaId?.image1}
                 alt=""
                 className=" w-full rounded-xl max-h-[168px] object-cover"
               />
-              <h2 className=" text-2xl font-bold ">{data.poojaId.title}</h2>
+              <h2 className=" text-2xl font-bold ">{data?.poojaId?.title}</h2>
               <div className=" flex flex-col gap-2">
                 <div className=" flex gap-4 text-[17px] text-gray-500">
                   <GiByzantinTemple className=" text-orange-500" />
-                  {data.poojaId.address}
+                  {data.poojaId?.address}
                 </div>
                 <div className=" text-gray-500 flex  gap-4 text-[17px] justify-between">
-                <p>{data.packageId.title}</p>
-                   <p className=' text-green-500'>₹ {data.packageId.price}</p>
+                <p>{data.packageId?.title}</p>
+                   <p className=' text-green-500'>₹ {data.packageId?.price}</p>
                 </div>
                 <div className=" text-gray-500 flex  gap-4 text-[17px] justify-between">
                 <p>{data.userId.fullName}</p>
-                   <p className=' flex items-center gap-2'> <RiWhatsappLine className=' text-green-500' />{data.userId.phoneNum}</p>
+                   <p className=' flex items-center gap-2'> <RiWhatsappLine className=' text-green-500' />{data.userId?.phoneNum}</p>
                 </div> 
                 
                 <hr className=' w-full h-[2px] bg-gray-500' />
@@ -63,7 +65,7 @@ const EnrolledUser = () => {
                {
                 data.offeringItem.map((datas, index)=>{
                     return <div className=' flex justify-between flex-col items-center'>
-                        <p className=' text-green-500'>₹{datas.price}</p>
+                        <p className=' text-green-500'>₹{datas?.price}</p>
                         <p>{datas.title}</p>
                     </div>
                 })

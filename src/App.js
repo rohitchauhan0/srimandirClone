@@ -20,6 +20,13 @@ import PaymentPage from "./component/core/PaymentSection/PaymentPage";
 import BookedPooja from "./component/core/Dashboard/BookedPooja/BookedPooja";
 import EnrolledUser from "./component/core/Dashboard/EnrolledUser/EnrolledUser";
 import { PrivateRoute } from "./PrivateRoute";
+import CreateLibrary from "./component/core/Dashboard/Library/CreateLibrary";
+import LibraryDetailsByName from "./component/core/LibrarySection/LibraryDetailsByName";
+import LibraryDetailById from "./component/core/LibrarySection/LibraryDetailById";
+import AllLibraryContent from "./component/core/Dashboard/LibraryContent/AllLibraryContent";
+import AllArticles from "./component/core/LibrarySection/AllArticles";
+import CreateSection from "./component/core/Dashboard/Section/CreateSection";
+import Footer from "./component/common/Footer";
 
 const App = () => {
   return (
@@ -30,6 +37,9 @@ const App = () => {
         <Route path="/puja" element={<PujaPage />} />
         <Route path="/puja/:poojaId" element={<PoojaById />} />
         <Route path="/puja/:poojaId/:packageId" element={<PaymentPage />} />
+        <Route path="/articles/:sectionName" element={<LibraryDetailsByName />} />
+        <Route path="/articles/:sectionName/:subsectionId" element={<LibraryDetailById />} />
+        <Route path="/articles" element={<AllArticles />} />
 
         <Route path="/dashboard" element={<Dashboard />}>
           <Route path="/dashboard/my-profile" element={<PrivateRoute><MyProfile /></PrivateRoute>} />
@@ -48,8 +58,12 @@ const App = () => {
           <Route path="/dashboard/settings" element={<PrivateRoute><Setting /></PrivateRoute>} />
           <Route path="/dashboard/booked-pooja" element={<PrivateRoute><BookedPooja /></PrivateRoute>} />
           <Route path="/dashboard/Enrolled-user" element={<PrivateRoute><EnrolledUser /></PrivateRoute>} />
+          <Route path="/dashboard/create-library" element={<PrivateRoute><CreateLibrary /></PrivateRoute>} />
+          <Route path="/dashboard/library-content" element={<PrivateRoute><AllLibraryContent /></PrivateRoute>} />
+          <Route path="/dashboard/create-section" element={<PrivateRoute><CreateSection /></PrivateRoute>} />
         </Route>
       </Routes>
+      <Footer/>
     </div>
   );
 };

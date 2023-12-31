@@ -36,18 +36,18 @@ const Timer = ({targetDate}) => {
           {days !== undefined ? (
            <div className=' flex items-center gap-5'>
             <div className='  flex bg-orange-200 lg:flex-row flex-col items-center lg:items-end lg:p-3 p-1 rounded-xl gap-1 lg:gap-3'>
-                <p className=' text-lg lg:text-4xl font-bold '>{days}</p>
-                <p>Days</p>
+                <p className=' text-lg lg:text-2xl font-bold text-orange-500 '>{days}</p>
+                <p className='text-orange-500'>Days</p>
             </div> 
             <div className=' flex bg-orange-200 lg:flex-row flex-col items-center lg:items-end lg:p-3 p-1 rounded-xl gap-1 lg:gap-3'>
-                <p className='  text-lg lg:text-4xl font-bold '>{hours}</p>
-                <p>Hours</p>
+                <p className='  text-lg lg:text-2xl font-bold text-orange-500 '>{hours}</p>
+                <p className='text-orange-500'>Hours</p>
             </div> <div className=' flex bg-orange-200 lg:flex-row flex-col items-center lg:items-end lg:p-3 p-1 rounded-xl gap-1 lg:gap-3'>
-                <p className='  text-lg lg:text-4xl font-bold '>{minutes}</p>
-                <p>Minutes</p>
+                <p className='  text-lg lg:text-2xl font-bold text-orange-500'>{minutes}</p>
+                <p className='text-orange-500'>Minutes</p>
             </div> <div className=' flex bg-orange-200 lg:flex-row flex-col items-center lg:items-end lg:p-3 p-1 rounded-xl gap-1 lg:gap-3'>
-                <p className=' text-lg lg:text-4xl font-bold '>{seconds}</p>
-                <p>Seconds</p>
+                <p className=' text-lg lg:text-2xl font-bold text-orange-500'>{seconds}</p>
+                <p className='text-orange-500'>Seconds</p>
             </div>
            </div>
           ) : (

@@ -6,6 +6,8 @@ const pujaRoutes = require('./Routes/PoojaRoutes')
 const packageRoutes = require('./Routes/PackageRoute')
 const itemRoutes = require('./Routes/OfferingItemRoutes')
 const paymentRoutes = require('./Routes/PaymentRoute')
+const sectionRoutes = require('./Routes/SectionRoutes')
+const SubsectionRoutes = require('./Routes/SubsectionRoutes')
 require('dotenv').config()
  
 
@@ -13,13 +15,13 @@ require('./Config/Database').connectWithDb()
 require('./Config/Cloudinary').cloduinaryConnect()
 
 app.use(express.json())
-const cookieParser = require('cookie-parser')
+const cookieParser = require('cookie-parser') 
 app.use(cookieParser())
 const cors = require('cors')
 app.use(
     cors({
-        origin:"https://srimandir-clone.vercel.app",
-        // origin:"http://localhost:3000",
+        // origin:"https://srimandir-clone.vercel.app",
+        origin:"http://localhost:3000",
         credentials:true
     })
 )
@@ -36,6 +38,8 @@ app.use("/api/v1/puja", pujaRoutes)
 app.use("/api/v1/package", packageRoutes)
 app.use("/api/v1/item", itemRoutes)
 app.use("/api/v1/payment", paymentRoutes)
+app.use("/api/v1/section", sectionRoutes)
+app.use("/api/v1/subsection", SubsectionRoutes)
 
 
 

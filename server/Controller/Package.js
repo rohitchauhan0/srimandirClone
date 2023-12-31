@@ -24,7 +24,7 @@ exports.createPackage = async(req, res)=>{
 
 exports.getAllPackage = async(req, res)=>{
     try {
-        const allPackage = await PoojaPackage.find({}).sort({price:-1}).exec()
+        const allPackage = await PoojaPackage.find({})
         return res.status(200).json({
             success:true,
             data:allPackage

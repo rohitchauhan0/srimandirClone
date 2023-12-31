@@ -1,5 +1,5 @@
-// const BASE_URL = "http://localhost:4000/api/v1"
-const BASE_URL = "https://srimandir.onrender.com/api/v1"
+const BASE_URL = "http://localhost:4000/api/v1"
+// const BASE_URL = "https://srimandir.onrender.com/api/v1"
 
 export const authEndPoints = {
         SIGNUP_API : BASE_URL + "/auth/signup",
@@ -43,4 +43,23 @@ export const paymentEndPoint = {
         CREATE_PAYMENT_API : BASE_URL + "/payment/capturePayment",
         VERIFY_PAYMENT_API : BASE_URL + "/payment/verifyPayment",
         GET_ALL_PAYMENT_API : BASE_URL + "/payment/paymentDetail",
+}
+
+
+export const sectionEndPoint = {
+        GET_SECTION_NAME_API : BASE_URL + "/section/getSectionName",
+        GET_SECTION_BY_NAME_API : BASE_URL + "/section/getSectionByName",
+        GET_FULL_SECTION_API : BASE_URL + "/section/getFullSection",
+        CREATE_SECTION_API : BASE_URL + "/section/createSection",
+}
+
+export const subsectionEndPoint = {
+        CREATE_ARTI_API : BASE_URL + "/subsection/createArti",
+        CREATE_CHALIS_API : BASE_URL + "/subsection/createChalisa",
+        CREATE_MANTRA_API : BASE_URL + "/subsection/createMantra",
+        GET_SUBSECTION_BY_ID_API : BASE_URL + "/subsection/getSubsectionById",
+        GET_FULL_SUBSECTION_API : BASE_URL + "/subsection/getFullSubSection",
+        DELETE_SUBSECTION_API : BASE_URL + "/subsection/deleteSubSection",
+        CREATE_BLOG_API : BASE_URL + "/subsection/createBlogSection",
+
 }
