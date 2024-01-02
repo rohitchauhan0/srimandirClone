@@ -13,6 +13,7 @@ import { logout } from "../../Services/Operations/AuthOper";
 import { IoMenuOutline } from "react-icons/io5";
 import { RxCross2 } from "react-icons/rx";
 import { FaBook } from "react-icons/fa";
+import { GiByzantinTemple } from "react-icons/gi";
 
 const Navbar = () => {
   const [showLibrary, setshowLibrary] = useState(true);
@@ -105,7 +106,7 @@ const Navbar = () => {
                                   <p>Read all Articles</p>
                                 </div>
                               </div>
-                          {sectionDetail.map((data, index) => {
+                          {sectionDetail?.slice(0,6)?.map((data, index) => {
                             return (
                               <div
                                 className=" flex  gap-2 items-center text-gray-400 hover:bg-slate-50"
@@ -116,9 +117,11 @@ const Navbar = () => {
                                   <FaHandsPraying className=" text-orange-500 p-2 rounded-xl text-4xl bg-white shadow-sm shadow-black" />
                                 ) : data.title === "Chalisa" ? (
                                     <FaBook  className=" text-orange-500 p-2 rounded-xl text-4xl bg-white shadow-sm shadow-black" />
-                                ) : (
-                                    <FaBook className=" text-orange-500 p-2 rounded-xl text-4xl bg-white shadow-sm shadow-black"/>
-                                )}
+                                ) : data.title=== "Mantra" ? ((
+                                    <GiByzantinTemple  className=" text-orange-500 p-2 rounded-xl text-4xl bg-white shadow-sm shadow-black"/>
+                                )) : "" }
+
+                                
                                 <div>
                                   <h2 className=" text-orange-500">{data.title}</h2>
                                   <p>{data.description}</p>

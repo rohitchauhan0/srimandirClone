@@ -27,6 +27,7 @@ import AllLibraryContent from "./component/core/Dashboard/LibraryContent/AllLibr
 import AllArticles from "./component/core/LibrarySection/AllArticles";
 import CreateSection from "./component/core/Dashboard/Section/CreateSection";
 import Footer from "./component/common/Footer";
+import CreateReview from "./component/core/Dashboard/Review/CreateReview";
 
 const App = () => {
   return (
@@ -61,6 +62,7 @@ const App = () => {
           <Route path="/dashboard/create-library" element={<PrivateRoute><CreateLibrary /></PrivateRoute>} />
           <Route path="/dashboard/library-content" element={<PrivateRoute><AllLibraryContent /></PrivateRoute>} />
           <Route path="/dashboard/create-section" element={<PrivateRoute><CreateSection /></PrivateRoute>} />
+          <Route path="/dashboard/create-review" element={<PrivateRoute><CreateReview /></PrivateRoute>} />
         </Route>
       </Routes>
       <Footer/>

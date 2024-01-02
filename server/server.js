@@ -8,6 +8,7 @@ const itemRoutes = require('./Routes/OfferingItemRoutes')
 const paymentRoutes = require('./Routes/PaymentRoute')
 const sectionRoutes = require('./Routes/SectionRoutes')
 const SubsectionRoutes = require('./Routes/SubsectionRoutes')
+const reviewRoutes = require('./Routes/ReviewRoute')
 require('dotenv').config()
  
 
@@ -40,6 +41,7 @@ app.use("/api/v1/item", itemRoutes)
 app.use("/api/v1/payment", paymentRoutes)
 app.use("/api/v1/section", sectionRoutes)
 app.use("/api/v1/subsection", SubsectionRoutes)
+app.use("/api/v1/review", reviewRoutes)
 
 
 

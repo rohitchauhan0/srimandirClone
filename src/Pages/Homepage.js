@@ -30,6 +30,7 @@ import libraryImage1 from "../Assets/homepageLibrary/arti.webp";
 import libraryImage2 from "../Assets/homepageLibrary/chalisa.webp";
 import libraryImage3 from "../Assets/homepageLibrary/mantra.webp";
 import libraryImage4 from "../Assets/homepageLibrary/Ayurvedic.webp";
+import GetRating from "../component/common/GetRating";
 
 const Homepage = () => {
   const { GET_ALL_PUJA_API } = pujaEndPoints;
@@ -63,8 +64,8 @@ const Homepage = () => {
               million+ people.
             </p>
           </div>
-          <div className=" w-full lg:w-[40%]">
-            <img src={banner} alt="" className=" w-full h-full object-cover" />
+          <div className=" w-full lg:w-[40%]" >
+            <img src={banner} alt="image" className=" w-full h-full object-cover" title="Image" />
           </div>
         </div>
       </div>
@@ -207,6 +208,20 @@ const Homepage = () => {
         </div>
       </div>
 
+      <div className="py-8 px-4 md:px-0 mx-auto w-full max-w-screen-xl lg:px-0 flex flex-col gap-10 ">
+        <div className=" text-left md:text-center lg:mb-0 flex items-center justify-center flex-col ">
+          <h2 className=" text-4xl font-bold leading-32 md:text-36 md:font-bold md:leading-49 mb-4 tracking-tight text-gray-900">
+          Reviews & Ratings 
+          </h2>
+          <p className="text-16 font-normal leading-21 md:text-20 md:font-normal md:leading-27 text-gray-600 sm:text-xl dark:text-gray-400 block mb-3">
+          Read to what our beloved devotees have to say about Sri Mandir.
+          </p>
+        </div>
+        <div className=" w-full  ">
+        <GetRating/>
+        </div>
+        </div>
+
       <div className="py-8 px-4 md:px-0 mx-auto max-w-screen-xl lg:py-12 lg:px-0 flex flex-col gap-10">
         <div className=" text-left md:text-center lg:mb-0 flex items-center justify-center flex-col ">
           <h2 className=" text-4xl font-bold leading-32 md:text-36 md:font-bold md:leading-49 mb-4 tracking-tight text-gray-900">
@@ -274,6 +289,7 @@ const Homepage = () => {
           />
         </div>
       </div>
+
 
       <div className="py-8 px-4 md:px-0 mx-auto max-w-screen-xl lg:py-12 lg:px-0 flex flex-col gap-10">
         <div className=" text-left md:text-center lg:mb-0 flex items-center justify-center flex-col ">

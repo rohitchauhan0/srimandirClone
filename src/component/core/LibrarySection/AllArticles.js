@@ -4,6 +4,7 @@ import { sectionEndPoint } from '../../../Services/AllApi'
 import { apiConnector } from '../../../Services/ApiConnector'
 import { useNavigate } from 'react-router-dom'
 import { FaArrowRight } from 'react-icons/fa6'
+import starImage from "../../../Assets/stars.png"
 
 const AllArticles = () => {
     const {GET_FULL_SECTION_API}= sectionEndPoint
@@ -54,10 +55,11 @@ const AllArticles = () => {
                     <div className=' w-full flex gap-10 py-5 overflow-auto '>
                         {
                             data?.subsection?.map((datas, index)=>{
-                    return <div className=' min-w-[170px] max-h-[500px] items-center flex flex-col gap-1 cursor-pointer ' key={index}>
+                    return <div className=' min-w-[170px] max-h-[500px] items-center flex flex-col gap-1 cursor-pointer ' key={index} onClick={()=> navigate(`/articles/${data.title}/${datas._id}`)}>
                         <img src={datas?.image1} alt="" className=' w-[170px] object-cover min-h-[200px] rounded-xl' />
                         <p className=' font-bold  text-lg'>{datas.title1}</p>
                         <p className=' font-bold text-gray-500'>{datas.description1}</p>
+                        <img src={starImage} alt="" className=' w-[90px] -mt-4' />
                        
                     </div>
             })

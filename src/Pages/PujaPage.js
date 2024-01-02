@@ -5,6 +5,7 @@ import templeImage2 from "../Assets/sanjan-malakala-P9JAVSExxh0-unsplash.jpg"
 import frontImage from "../Assets/puja_L1_hero.svg"
 import Poojacard from '../component/core/PujaSection/Poojacard'
 import PoojaGradientCard from '../component/core/PujaSection/PoojaGradientCard'
+import GetRating from '../component/common/GetRating'
 
 const PujaPage = () => {
   return (
@@ -64,6 +65,16 @@ const PujaPage = () => {
 
           </div>
 
+          <div className=' w-full mt-20 max-w-screen-xl'>
+            <div className=' w-full   flex items-start gap-5 flex-col'>
+              <h2 className=' text-4xl font-bold'>What devotees Say about Sri Mandir Puja ?</h2>
+              <p className=' text-2xl  text-gray-500'>Reviews and Ratings from our customers who performed online Puja with us.</p>
+            </div>
+            <div className=' w-full'>
+              <GetRating/>
+            </div>
+
+          </div>
     </div>
   )
 }

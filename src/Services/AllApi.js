@@ -61,5 +61,9 @@ export const subsectionEndPoint = {
         GET_FULL_SUBSECTION_API : BASE_URL + "/subsection/getFullSubSection",
         DELETE_SUBSECTION_API : BASE_URL + "/subsection/deleteSubSection",
         CREATE_BLOG_API : BASE_URL + "/subsection/createBlogSection",
+}
 
+export const reviewEndPoint = {
+        CREATE_REVIEW_API : BASE_URL + "/review/createReview",
+        GET_ALL_REVIEW_API : BASE_URL + "/review/getReview",
 }

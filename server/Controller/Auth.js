@@ -4,7 +4,7 @@ const bcyrpt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const otpGenerator = require("otp-generator");
 const { uploadImageToCloudinary } = require("../Utils/uploadImage");
-let validator = require('email-validator')
+let validator = require('email-validator') 
 
 exports.signUp = async (req, res) => {
   try {

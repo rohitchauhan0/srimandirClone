@@ -86,5 +86,11 @@ export const DASHBOARD_LINK = [
         accountType: ACCOUNT_TYPE.ADMIN,
     path:"/dashboard/create-section",
     },
+    {
+        id:15,
+        title:"Create review",
+        accountType: ACCOUNT_TYPE.ADMIN,
+    path:"/dashboard/create-review",
+    },
 
 ]

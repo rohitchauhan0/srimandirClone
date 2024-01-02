@@ -3,6 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { sectionEndPoint } from '../../../Services/AllApi'
 import { apiConnector } from '../../../Services/ApiConnector'
 import LibraryNavbar from './LibraryNavbar'
+import starImage from "../../../Assets/stars.png"
 
 const LibraryDetailsByName = () => {
     const {sectionName} = useParams()
@@ -42,6 +43,7 @@ const LibraryDetailsByName = () => {
                         <img src={data.image1} alt="" className=' w-[170px] object-cover min-h-[200px] rounded-xl' />
                         <p className=' font-bold  text-lg'>{data.title1}</p>
                         <p className=' font-bold text-gray-500'>{data.description1}</p>
+                        <img src={starImage} alt="" className=' w-[90px] -mt-4' />
                     </div>
             })
            }
