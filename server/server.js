@@ -8,7 +8,7 @@ const itemRoutes = require('./Routes/OfferingItemRoutes')
 const paymentRoutes = require('./Routes/PaymentRoute')
 const sectionRoutes = require('./Routes/SectionRoutes')
 const SubsectionRoutes = require('./Routes/SubsectionRoutes')
-const reviewRoutes = require('./Routes/ReviewRoute')
+const reviewRoutes = require('./Routes/ReviewRoute') 
 require('dotenv').config()
  
 

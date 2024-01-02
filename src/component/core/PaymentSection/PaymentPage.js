@@ -8,6 +8,9 @@ import { FaPlus } from "react-icons/fa6";
 import { RxCross2 } from "react-icons/rx";
 import { bookPuja } from "../../../Services/Operations/PaymentOperation";
 import toast from "react-hot-toast";
+import CouponModal from "./CouponModal";
+import { FcApproval } from "react-icons/fc";
+import { setDiscountMoney } from "../../../Slices/CoupneSlice";
 
 const PaymentPage = () => {
   const { poojaId } = useParams();
@@ -22,8 +25,10 @@ const PaymentPage = () => {
   const [addeditems, setaddeditems] = useState([])
   const {token} = useSelector((state)=> state.auth)
   const [offeringItems, setofferingItems] = useState([])
+  const [coupneModal, setcoupneModal] = useState(null)
   const navigate = useNavigate()
   const dispatch = useDispatch()
+  const {discountMoney}= useSelector((state)=> state.coupne)
   useEffect(() => {
    const getAllItem = async()=>{
       try {
@@ -86,8 +91,7 @@ const PaymentPage = () => {
 
   };
 
-  const totalPrice = addeditems.reduce((total, detail) => total + detail.price, 0) + packageDetails.price;
-
+  const totalPrice = addeditems.reduce((total, detail) => total + detail.price, 0) + (packageDetails.price-discountMoney);
   const paymentHandler = ()=>{
     if(token !== null && user.accountType === "User"){
     bookPuja(token, poojaId, packageId,offeringItems, navigate, dispatch, totalPrice, user )
@@ -100,7 +104,8 @@ const PaymentPage = () => {
 
 
   return (
-    <div className=" w-full min-h-screen max-w-screen-xl mx-auto pt-20 flex flex-col gap-3">
+   <>
+     <div className=" w-full min-h-screen max-w-screen-xl mx-auto pt-20 flex flex-col gap-3">
       <h1 className=" text-2xl font-bold">Review Booking</h1>
       <hr className=" w-full h-[1px] bg-gray-500" />
       <div className=" flex lg:flex-row flex-col-reverse gap-10 mt-10 h-full">
@@ -113,10 +118,26 @@ const PaymentPage = () => {
             <p className=" font-bold text-orange-500">₹ {packageDetails.price}</p>
           </div>
           <div className=" flex flex-col gap-2 p-3 border border-gray-400 rounded-xl bg-gray-50">
-                <div className=" flex justify-between items-center w-full text-cyan-500">
+               {
+                discountMoney === 0 ? ( <div className=" flex justify-between items-center w-full text-cyan-500 cursor-pointer" onClick={()=>{
+                  setcoupneModal({
+                    cancelHandler:()=>{
+                      setcoupneModal(null)
+                    }
+                  })
+                }}>
                     <p>Apply Coupon</p>
-                    <IoIosArrowForward />
-                </div>
+                    <IoIosArrowForward  />
+                </div>) :(<div className=" flex justify-between w-full items-center">
+                 
+                  <p className=" flex items-center gap-2">Coupon applied
+                  <FcApproval /></p>
+
+                  <p className=" cursor-pointer text-red-500" onClick={()=>{
+                    dispatch(setDiscountMoney(0))
+                  }}>Cancel</p>
+                </div>)
+               }
           </div>
           <div className=" flex flex-col gap-2 p-3 border border-gray-400 rounded-xl bg-gray-50 text-[12px]">
                 <p>{user?.fullName}</p>
@@ -179,6 +200,10 @@ const PaymentPage = () => {
        </div>
       </div>
     </div>
+    {
+      coupneModal && <CouponModal cancelHandler={coupneModal.cancelHandler} totalMoney={ packageDetails.price}/>
+    }
+   </>
   );
 };
 

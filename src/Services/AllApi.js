@@ -43,6 +43,12 @@ export const paymentEndPoint = {
         CREATE_PAYMENT_API : BASE_URL + "/payment/capturePayment",
         VERIFY_PAYMENT_API : BASE_URL + "/payment/verifyPayment",
         GET_ALL_PAYMENT_API : BASE_URL + "/payment/paymentDetail",
+
+
+        CREATE_COUPNE_API : BASE_URL + "/payment/createCoupne",
+        GET_COUPNE_API : BASE_URL + "/payment/getCoupne",
+        DELETE_COUPNE_API : BASE_URL + "/payment/deleteCoupne",
+
 }
 
 
@@ -67,3 +73,5 @@ export const reviewEndPoint = {
         CREATE_REVIEW_API : BASE_URL + "/review/createReview",
         GET_ALL_REVIEW_API : BASE_URL + "/review/getReview",
 }
+
+

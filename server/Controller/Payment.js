@@ -8,6 +8,8 @@ const crypto = require("crypto");
 const { instance } = require("../Config/Razorpay");
 const { mailSender } = require("../Utils/Mailsender");
 
+const PromoCode = require('../Modals/PromoCode')
+
 require("dotenv").config();
 
 exports.capturePayment = async (req, res) => {
@@ -126,3 +128,56 @@ exports.getPaymentDetails = async (req, res) => {
     return res.status(500).json({ success: false, message: error.message });
   }
 };
+
+
+
+
+
+exports.CreatePromoCode = async(req, res)=>{
+  try {
+    const {coupneCode, percentage,description} = req.body
+    const createCoupne = await PromoCode.create({
+      coupneCode,
+      percentage,
+      description
+    })
+    return res.status(200).json({
+      success:true,
+      message:"Coupne created successfully"
+    })
+    
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json({ success: false, message: error.message });
+  }
+}
+
+exports.getCoupon = async(req, res)=>{
+  try {
+    const getCoupon = await PromoCode.find({})
+    return res.status(200).json({
+      success:true,
+      data:getCoupon
+    })
+    
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json({ success: false, message: error.message });
+  }
+}
+
+exports.deleteCoupon = async(req, res)=>{
+  try {
+    const {coupneId}= req.body
+    await PromoCode.findByIdAndDelete(coupneId)
+    return res.status(200).json({
+      success:true,
+      message:"Coupne deleted successfully"
+    })
+    
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json({ success: false, message: error.message });
+  }
+}
+

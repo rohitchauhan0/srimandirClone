@@ -12,6 +12,7 @@ import PoojaProcess from "./PoojaProcess";
 import PaymentCard from "./PaymentCard";
 import PoojaNavbar from "./PoojaNavbar";
 import TabSection from "./TabSection";
+import GetRating from "../../common/GetRating";
 
 const PoojaById = () => {
 
@@ -50,6 +51,7 @@ const PoojaById = () => {
   const [textColor3, settextColor3] = useState("")
   const [textColor4, settextColor4] = useState("")
   const [textColor5, settextColor5] = useState("")
+  const [textColor6, settextColor6] = useState("")
 
 
   useEffect(() => {
@@ -59,6 +61,7 @@ const PoojaById = () => {
       const aboutPujaProcess = document.getElementById("aboutPujaProcess");
       const aboutTemple = document.getElementById("aboutTemple");
       const aboutPayment = document.getElementById("aboutPayment");
+      const aboutReviews = document.getElementById("reviews");
 
       const isInView = (element, scrollPos) => {
         if (!element) return false;
@@ -100,6 +103,11 @@ if (isInView(aboutPayment, scrollPosition)) {
         settextColor5("text-orange-500")
       } else {
         settextColor5("text-gray-500 ")
+      }
+      if (isInView(aboutReviews, scrollPosition)) {
+        settextColor6("text-orange-500")
+      } else {
+        settextColor6("text-gray-500 ")
       }
 
       // Repeat the above process for other sections...
@@ -148,7 +156,7 @@ if (isInView(aboutPayment, scrollPosition)) {
           </div>
         </div>
       </div>
-      <TabSection textColor1={textColor1} textColor2={textColor2} textColor3={textColor3} textColor4={textColor4} textColor5={textColor5}  />
+      <TabSection textColor1={textColor1} textColor2={textColor2} textColor3={textColor3} textColor4={textColor4} textColor5={textColor5} textColor6={textColor6}  />
       <div
         className=" w-full min-h-screen flex lg:mt-0 mt-3 flex-col gap-8"
       >
@@ -218,6 +226,19 @@ if (isInView(aboutPayment, scrollPosition)) {
           <div ref={targetDiv} id="aboutPayment">
             <PaymentCard poojaId={poojaId} />
           </div>
+
+
+          <div className=' w-full mt-20 max-w-screen-xl' id="reviews">
+            <div className=' w-full   flex items-start gap-5 flex-col'>
+              <h2 className=' text-4xl font-bold'>What devotees Say about Sri Mandir Puja ?</h2>
+              <p className=' text-2xl  text-gray-500'>Reviews and Ratings from our customers who performed online Puja with us.</p>
+            </div>
+            <div className=' w-full'>
+              <GetRating/>
+            </div>
+
+          </div>
+
         </div>
       </div>
     </div>

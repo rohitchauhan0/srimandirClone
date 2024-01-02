@@ -13,7 +13,6 @@ const GetRating = () => {
         const getAllReview = async()=>{
             try {
                 const rating = await apiConnector("GET", GET_ALL_REVIEW_API)
-                console.log(rating.data.data)
                 setrating(rating.data.data)
                 
             } catch (error) {

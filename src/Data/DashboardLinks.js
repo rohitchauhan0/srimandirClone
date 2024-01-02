@@ -92,5 +92,18 @@ export const DASHBOARD_LINK = [
         accountType: ACCOUNT_TYPE.ADMIN,
     path:"/dashboard/create-review",
     },
+    {
+        id:16,
+        title:"Create coupon",
+        accountType: ACCOUNT_TYPE.ADMIN,
+    path:"/dashboard/create-Coupon",
+    },
+    {
+        id:17,
+        title:"All coupon",
+        accountType: ACCOUNT_TYPE.ADMIN,
+    path:"/dashboard/all-Coupon",
+    },
+    
 
 ]

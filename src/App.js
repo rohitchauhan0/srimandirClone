@@ -28,6 +28,10 @@ import AllArticles from "./component/core/LibrarySection/AllArticles";
 import CreateSection from "./component/core/Dashboard/Section/CreateSection";
 import Footer from "./component/common/Footer";
 import CreateReview from "./component/core/Dashboard/Review/CreateReview";
+import TemplePage from "./Pages/TemplePage";
+import CreatePrivateCoupon from "./component/core/Dashboard/Coupon/CreateCoupon";
+import AllCoupon from "./component/core/Dashboard/Coupon/AllCoupon";
+
 
 const App = () => {
   return (
@@ -41,6 +45,7 @@ const App = () => {
         <Route path="/articles/:sectionName" element={<LibraryDetailsByName />} />
         <Route path="/articles/:sectionName/:subsectionId" element={<LibraryDetailById />} />
         <Route path="/articles" element={<AllArticles />} />
+        <Route path="/temples" element={<TemplePage />} />
 
         <Route path="/dashboard" element={<Dashboard />}>
           <Route path="/dashboard/my-profile" element={<PrivateRoute><MyProfile /></PrivateRoute>} />
@@ -63,6 +68,8 @@ const App = () => {
           <Route path="/dashboard/library-content" element={<PrivateRoute><AllLibraryContent /></PrivateRoute>} />
           <Route path="/dashboard/create-section" element={<PrivateRoute><CreateSection /></PrivateRoute>} />
           <Route path="/dashboard/create-review" element={<PrivateRoute><CreateReview /></PrivateRoute>} />
+          <Route path="/dashboard/create-Coupon" element={<PrivateRoute><CreatePrivateCoupon /></PrivateRoute>} />
+          <Route path="/dashboard/all-Coupon" element={<PrivateRoute><AllCoupon /></PrivateRoute>} />
         </Route>
       </Routes>
       <Footer/>
