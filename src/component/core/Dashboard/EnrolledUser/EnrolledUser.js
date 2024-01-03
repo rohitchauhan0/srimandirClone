@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux'
 import { GiByzantinTemple } from 'react-icons/gi'
 import Timer from '../../PujaSection/Timer'
 import { RiWhatsappLine } from 'react-icons/ri'
+import { IoMdCalendar } from 'react-icons/io'
 
 const EnrolledUser = () => {
     const {GET_ALL_PAYMENT_API} = paymentEndPoint
@@ -45,11 +46,15 @@ const EnrolledUser = () => {
                 className=" w-full rounded-xl max-h-[168px] object-cover"
               />
               <h2 className=" text-2xl font-bold ">{data?.poojaId?.title}</h2>
-              <div className=" flex flex-col gap-2">
+              <div className=" flex flex-col gap-2 items-start">
                 <div className=" flex gap-4 text-[17px] text-gray-500">
                   <GiByzantinTemple className=" text-orange-500" />
                   {data.poojaId?.address}
                 </div>
+                <div className=" flex gap-4 text-[20px] items-center text-gray-500">
+                  <IoMdCalendar className=" text-orange-500" />
+                  {data.poojaId?.date}
+              </div>
                 <div className=" text-gray-500 flex  gap-4 text-[17px] justify-between">
                 <p>{data.packageId?.title}</p>
                    <p className=' text-green-500'>₹ {data.packageId?.price}</p>

@@ -1,0 +1,29 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1722_2324)">
+<mask id="mask0_1722_2324" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="32" height="32">
+<path d="M32 0H0V32H32V0Z" fill="white"/>
+</mask>
+<g mask="url(#mask0_1722_2324)">
+<path d="M32 5H0V27H32L25.5 16L32 5Z" fill="url(#paint0_linear_1722_2324)"/>
+<path d="M14.3512 16.8099V14.8381H16.8131V16.8099H18.1047V18.993H16.8131V21.6972H14.3512V18.993H9.74866V17.0986L13.8303 10.4155H16.6133L12.7314 16.8381L14.3512 16.8099Z" fill="white"/>
+<path style="mix-blend-mode:multiply" d="M0 0V32C3.1005 29.6549 5.31973 23.3803 5.31973 16C5.31973 8.61972 3.1005 2.34507 0 0Z" fill="url(#paint1_radial_1722_2324)"/>
+</g>
+</g>
+<defs>
+<linearGradient id="paint0_linear_1722_2324" x1="-15.1111" y1="11.0043" x2="30.9256" y2="16.6875" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FF1A00"/>
+<stop offset="1" stop-color="#FF8000"/>
+</linearGradient>
+<radialGradient id="paint1_radial_1722_2324" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(-2.26718 16.447) scale(8.02504 16.9321)">
+<stop stop-color="#6B6B6B"/>
+<stop offset="0.21" stop-color="#969696"/>
+<stop offset="0.46" stop-color="#C3C3C3"/>
+<stop offset="0.69" stop-color="#E4E4E4"/>
+<stop offset="0.87" stop-color="#F8F8F8"/>
+<stop offset="1" stop-color="white"/>
+</radialGradient>
+<clipPath id="clip0_1722_2324">
+<rect width="32" height="32" fill="white"/>
+</clipPath>
+</defs>
+</svg>

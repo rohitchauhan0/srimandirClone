@@ -126,7 +126,7 @@ const Step1 = () => {
             Enter date<sup className=" text-red-500 text-sm">*</sup>
           </label>
           <input
-            type="date"
+            type="datetime-local"
             className=" w-full border-2 border-orange-500  rounded-xl p-2"
             placeholder="Enter date of pooja start "
             {...register("date", { required: true })}

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-const TabSection = ({textColor1, textColor2, textColor3, textColor4, textColor5, textColor6}) => {
+const TabSection = ({textColor1, textColor2, textColor3, textColor4, textColor5, textColor6, textColor7}) => {
 
    
     
@@ -13,7 +13,7 @@ const TabSection = ({textColor1, textColor2, textColor3, textColor4, textColor5,
           <p className={`${textColor4}`}>Temple Details</p>
           <p className={`${textColor5}`}>Packages</p>
           <p className={`${textColor6}`} >Reviews</p>
-          <p>FAQs</p>
+          <p className={`${textColor7}`}>FAQs</p>
         </div>
     </div>
   )
