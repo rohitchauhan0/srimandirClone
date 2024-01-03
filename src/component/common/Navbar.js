@@ -268,7 +268,7 @@ const Navbar = () => {
                 </p>
                   {
                     NavLinks.map((data)=>{
-                      return <Link className=" flex items-center justify-between " to={`/${data.path}`}>
+                      return <Link className=" flex items-center justify-between " to={data.path}>
                         {
                           data.title !== "Library" && <p className=" text-gray-500 text-sm">{data.title}</p>
                         }
