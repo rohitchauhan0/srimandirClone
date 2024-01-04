@@ -36,7 +36,7 @@ const Astrology = () => {
         Please fill out the form below to get personalized astrology insights.
         </p>
 
-            <img src={astrologyImage} alt="" className=' rounded-full w-full h-full object-cover animate-spin' />
+            <img src={astrologyImage} alt="" className=' rounded-full lg:w-full h-full object-cover animate-spin w-[300px] ' />
         </div>
 
         <div className=' w-full flex flex-col items-center justify-center mt-14'>
