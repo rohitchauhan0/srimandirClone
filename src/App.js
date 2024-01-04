@@ -31,6 +31,9 @@ import CreateReview from "./component/core/Dashboard/Review/CreateReview";
 import TemplePage from "./Pages/TemplePage";
 import CreatePrivateCoupon from "./component/core/Dashboard/Coupon/CreateCoupon";
 import AllCoupon from "./component/core/Dashboard/Coupon/AllCoupon";
+import CreateTempleLoc from "./component/core/Dashboard/TempleLoc/CreateTempleLoc";
+import CreateTempleDetails from "./component/core/Dashboard/TempleDetail/CreateTempleDetails";
+import TempleById from "./component/core/TempleSection/TempleById";
 
 
 const App = () => {
@@ -46,6 +49,7 @@ const App = () => {
         <Route path="/articles/:sectionName/:subsectionId" element={<LibraryDetailById />} />
         <Route path="/articles" element={<AllArticles />} />
         <Route path="/temples" element={<TemplePage />} />
+        <Route path="/temples/:templeId" element={<TempleById />} />
 
         <Route path="/dashboard" element={<Dashboard />}>
           <Route path="/dashboard/my-profile" element={<PrivateRoute><MyProfile /></PrivateRoute>} />
@@ -70,9 +74,11 @@ const App = () => {
           <Route path="/dashboard/create-review" element={<PrivateRoute><CreateReview /></PrivateRoute>} />
           <Route path="/dashboard/create-Coupon" element={<PrivateRoute><CreatePrivateCoupon /></PrivateRoute>} />
           <Route path="/dashboard/all-Coupon" element={<PrivateRoute><AllCoupon /></PrivateRoute>} />
+          <Route path="/dashboard/temple-loc" element={<PrivateRoute><CreateTempleLoc /></PrivateRoute>} />
+          <Route path="/dashboard/temple-detail" element={<PrivateRoute><CreateTempleDetails /></PrivateRoute>} />
         </Route>
       </Routes>
-      <Footer/>
+      
     </div>
   );
 };

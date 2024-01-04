@@ -63,7 +63,7 @@ const CreateBlog = ({name, sectionId}) => {
             type="text"
             className=" w-full border-2 border-orange-500  rounded-xl p-2"
             placeholder="Enter description here"
-            {...register("description", { required: true })}
+            {...register("description")}
           />
           {errors.description && (
             <span className=" text-red-500">Description is required</span>

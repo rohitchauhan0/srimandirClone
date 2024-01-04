@@ -9,6 +9,7 @@ const paymentRoutes = require('./Routes/PaymentRoute')
 const sectionRoutes = require('./Routes/SectionRoutes')
 const SubsectionRoutes = require('./Routes/SubsectionRoutes')
 const reviewRoutes = require('./Routes/ReviewRoute') 
+const templeRoutes = require('./Routes/TempleRoute') 
 require('dotenv').config()
  
 
@@ -42,6 +43,7 @@ app.use("/api/v1/payment", paymentRoutes)
 app.use("/api/v1/section", sectionRoutes)
 app.use("/api/v1/subsection", SubsectionRoutes)
 app.use("/api/v1/review", reviewRoutes)
+app.use("/api/v1/temple", templeRoutes)
 
 
 

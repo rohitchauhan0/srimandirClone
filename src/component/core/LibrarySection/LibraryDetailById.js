@@ -4,6 +4,7 @@ import { sectionEndPoint, subsectionEndPoint } from '../../../Services/AllApi'
 import { apiConnector } from '../../../Services/ApiConnector'
 import LibraryNavbar from './LibraryNavbar'
 import MantraDetails from './MantraDetails'
+import Footer from '../../common/Footer'
 
 const LibraryDetailById = () => {
     const {subsectionId, sectionName} = useParams()
@@ -51,7 +52,8 @@ const LibraryDetailById = () => {
     
     
   return (
-    <div className=' mt-32'>
+   <>
+     <div className=' mt-32'>
         <LibraryNavbar sectionTitle={sectionName} subsectionName={subsectionDetail.title1}/>
       {
         loading ?(<div className=' w-full h-full flex items-center justify-center'><span className='loader'></span></div>):(  <div  className=" flex flex-col gap-10 lg:mt-32 max-w-screen-xl mx-auto pb-20 lg:px-0 px-3  ">
@@ -106,6 +108,8 @@ const LibraryDetailById = () => {
         
         </div>)}
            </div>
+           <Footer/>
+   </>
   )
 }
 

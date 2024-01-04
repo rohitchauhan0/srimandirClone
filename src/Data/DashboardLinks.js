@@ -104,6 +104,18 @@ export const DASHBOARD_LINK = [
         accountType: ACCOUNT_TYPE.ADMIN,
     path:"/dashboard/all-Coupon",
     },
+    {
+        id:18,
+        title:"Create temple loc",
+        accountType: ACCOUNT_TYPE.ADMIN,
+    path:"/dashboard/temple-loc",
+    },
+    {
+        id:19,
+        title:"Create temple details",
+        accountType: ACCOUNT_TYPE.ADMIN,
+    path:"/dashboard/temple-detail",
+    },
     
 
 ]

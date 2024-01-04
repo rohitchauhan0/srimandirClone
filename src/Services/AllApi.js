@@ -74,4 +74,12 @@ export const reviewEndPoint = {
         GET_ALL_REVIEW_API : BASE_URL + "/review/getReview",
 }
 
+export const templeEndPoint = {
+        CREATE_TEMPLE_LOCATION_API : BASE_URL + "/temple/createLoc",
+        CREATE_TEMPLE_DETAILS_API : BASE_URL + "/temple/createTempleDetail",
+        GET_ALL_TEMPLE_API : BASE_URL + "/temple/getTemple",
+        GET_TEMPLE_BY_ID_API : BASE_URL + "/temple/getTempleById",
+        GET_TEMPLE_BY_LOC_API : BASE_URL + "/temple/getTempleByLocId",
+}
+
 

@@ -12,6 +12,8 @@ import number2 from "../Assets/onlinePoojaWorks/number_2.svg"
 import number3 from "../Assets/onlinePoojaWorks/number_3.svg"
 import number4 from "../Assets/onlinePoojaWorks/number_4.svg"
 import OnlinePoojaSwiper from '../component/core/PujaSection/OnlinePoojaSwiper'
+import Footer from '../component/common/Footer'
+import { FcOk } from 'react-icons/fc'
 
 const PujaPage = () => {
 
@@ -33,15 +35,16 @@ const PujaPage = () => {
 
 
   return (
-    <div className=" flex items-center justify-between flex-col min-h-screen">
-          <div className=' flex w-full lg:flex-row flex-col items-center justify-between max-w-screen-2xl  '>
+   <>
+     <div className=" flex items-center justify-between flex-col min-h-screen">
+          <div className=' flex w-full lg:flex-row flex-col items-center justify-between max-w-screen-2xl   '>
             <div className=' w-full lg:w-[50%] h-full lg:mt-10 mt-20 flex items-center gap-3 flex-col px-10'>
                 <img src={frontImage} alt="" />
                 <h1 className=' text-4xl text-black font-bold'>Perform your puja as per Vedic rituals at Hindu pilgrimages and famous temples in India with Sri Mandir</h1>
                 <ul className=' flex list-disc flex-col gap-3 text-gray-500 items-start w-full px-5'>
-                    <li>Puja for good health, wealth & family</li>
-                    <li>Dosha & Astrology Remedy Pujas</li>
-                    <li>Yagya, Havan, and Mantra Jaap</li>
+                    <li className=' flex gap-2 items-center text-xl'><FcOk />Puja for good health, wealth & family</li>
+                    <li className=' flex gap-2 items-center text-xl'><FcOk />Dosha & Astrology Remedy Pujas</li>
+                    <li className=' flex gap-2 items-center text-xl'><FcOk />Yagya, Havan, and Mantra Jaap</li>
                 </ul>
                 <div className=' flex gap-3 w-full mt-3'>
                     <button className=' p-3 rounded-xl bg-orange-500 text-white' onClick={()=> handleScrolltoDivToExplore()}>Explore now</button>
@@ -126,6 +129,8 @@ const PujaPage = () => {
 
         
     </div>
+    <Footer/>
+   </>
   )
 }
 

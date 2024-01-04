@@ -18,6 +18,7 @@ import user2 from "../../../Assets/user/image2.avif"
 import user3 from "../../../Assets/user/image3.avif"
 import user4 from "../../../Assets/user/image4.avif"
 import user5 from "../../../Assets/user/image5.jpg"
+import Footer from "../../common/Footer";
 
 const PoojaById = () => {
   const { poojaId } = useParams();
@@ -122,7 +123,8 @@ const PoojaById = () => {
   }, []);
 
   return (
-    <div className=" w-full min-h-screen max-w-screen-xl mx-auto lg:px-0 px-5 ">
+   <>
+     <div className=" w-full min-h-screen max-w-screen-xl mx-auto lg:px-0 px-5 ">
       <PoojaNavbar poojaTitle={poojadetail.title} />
       <div className=" flex flex-col gap-32 lg:mt-40  ">
         <div className=" flex items-center lg:flex-row flex-col justify-center lg:justify-between  lg:px-0 px-2">
@@ -316,6 +318,8 @@ const PoojaById = () => {
         </div>
       </div>
     </div>
+    <Footer/>
+   </>
   );
 };
 

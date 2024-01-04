@@ -6,7 +6,7 @@ const otpGenerator = require("otp-generator");
 const { uploadImageToCloudinary } = require("../Utils/uploadImage");
 let validator = require('email-validator') 
 
-exports.signUp = async (req, res) => {
+exports.signUp = async (req, res) => { 
   try {
     const {
       fullName,

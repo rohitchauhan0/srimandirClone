@@ -31,6 +31,7 @@ import libraryImage2 from "../Assets/homepageLibrary/chalisa.webp";
 import libraryImage3 from "../Assets/homepageLibrary/mantra.webp";
 import libraryImage4 from "../Assets/homepageLibrary/Ayurvedic.webp";
 import GetRating from "../component/common/GetRating";
+import Footer from "../component/common/Footer";
 
 const Homepage = () => {
   const { GET_ALL_PUJA_API } = pujaEndPoints;
@@ -49,7 +50,8 @@ const Homepage = () => {
   }, []);
 
   return (
-    <div className=" flex items-center justify-between flex-col min-h-screen">
+   <>
+     <div className=" flex items-center justify-between flex-col min-h-screen">
       <div className=" w-full bg-orange-50">
         <div className=" max-w-screen-xl px-8 lg:px-3 py-14 flex lg:flex-row flex-col-reverse items-center mt-12 justify-between pt-32 mx-auto gap-3 ">
           <div className=" w-full lg:w-[60%] flex flex-col gap-6">
@@ -345,6 +347,8 @@ const Homepage = () => {
         </div>
       </div>
     </div>
+    <Footer/>
+   </>
   );
 };
 

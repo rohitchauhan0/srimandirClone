@@ -14,9 +14,10 @@ const Sidebar = () => {
     }
     const [showDas, setshowDas] = useState(false)
   return (
-    <div className={`${showDas ? " -translate-x-[100%] lg:translate-x-0" : ""} py-20   min-w-[220px] bg-white flex border-r border-gray-500 flex-col gap-2  px-4 lg:static  absolute left-0 h-full`}>
-    <div className=' flex flex-col gap-2 text-md relative  '>
-   <div className=' absolute -right-12 lg:hidden block'>
+  <div className=' relative'>
+      <div className={`${showDas ? " -translate-x-[100%] lg:translate-x-0" : ""} py-20   min-w-[220px] bg-white flex border-r border-gray-500 flex-col gap-2  px-4 lg:static  absolute left-0 h-full  `}>
+    <div className=' flex flex-col gap-1 text-md relative '>
+   <div className=' absolute -right-12  lg:hidden block'>
    {
         showDas ? <MdOutlineMenu   className=' text-2xl cursor-pointer' onClick={()=> setshowDas(false)} /> :  <RxCross2 onClick={()=> setshowDas(true)} className=' text-2xl cursor-pointer' />
    
@@ -43,6 +44,7 @@ const Sidebar = () => {
             Settings
         </Link>
     </div>
+  </div>
   )
 }
 

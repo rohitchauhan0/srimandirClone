@@ -6,6 +6,7 @@ import {
   FaAngleDown,
   FaAngleRight,
   FaHandsPraying,
+  FaMusic,
   FaUser,
 } from "react-icons/fa6";
 import Template from "../core/Auth/Template";
@@ -126,8 +127,10 @@ const Navbar = () => {
                                   <FaBook className=" text-orange-500 p-2 rounded-xl text-4xl bg-white shadow-sm shadow-black" />
                                 ) : data.title === "Mantra" ? (
                                   <GiByzantinTemple className=" text-orange-500 p-2 rounded-xl text-4xl bg-white shadow-sm shadow-black" />
-                                ) : (
-                                  ""
+                                ) : data.title === "Incarnations of gods and goddesses" ? (
+                                  <FaMusic  className=" text-orange-500 p-2 rounded-xl text-4xl bg-white shadow-sm shadow-black" />
+                                ): (
+                                  <FaBook className=" text-orange-500 p-2 rounded-xl text-4xl bg-white shadow-sm shadow-black" />
                                 )}
 
                                 <div>
