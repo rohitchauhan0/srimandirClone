@@ -27,9 +27,9 @@ const Astrology = () => {
     }
   return (
   <>
-      <div className=" flex items-center justify-between flex-col min-h-screen mt-20">
+      <div className=" flex items-center justify-between flex-col min-h-screen mt-20 lg:px-0 px-3">
         <div className=' max-w-screen-xl mx-auto flex flex-col h-full  '>
-        <div className=' flex justify-between w-full items-center h-full'>
+        <div className=' flex justify-between w-full items-center h-full lg:flex-row flex-col'>
            
             <p className=' text-2xl font-bold px-5'>
         Astrology is the study of the movements and relative positions of celestial objects as a means of divining information about human affairs and terrestrial events.
