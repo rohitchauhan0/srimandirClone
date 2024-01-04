@@ -57,26 +57,6 @@ export function signUp(fullName, email,phoneNum, password, confirmPassword, acco
 }
 
 
-// function setTokenWithExpiration(token) {
-//     const now = new Date();
-//     const expirationDate = new Date(now.getTime() + 3 * 24 * 60 * 60 * 1000);
-//     localStorage.setItem('token', JSON.stringify({ token, expirationDate: expirationDate.getTime() }));
-//   }
-  
-//   function removeExpiredToken() {
-//     const storedToken = localStorage.getItem('token');
-//     if (storedToken) {
-//       const { token, expirationDate } = JSON.parse(storedToken);
-//       const now = new Date().getTime();
-//       if (now > expirationDate) {
-//         localStorage.removeItem('token');
-//       }
-//     }
-//   }
-  
-
-//   removeExpiredToken();
-
 
 
 export function login(email, password, navigate){
@@ -95,10 +75,16 @@ export function login(email, password, navigate){
             toast.success("Login Successfull")
             dispatch(setToken(response.data.token))
             dispatch(setUser({...response.data.user}))
-            localStorage.setItem("token", JSON.stringify(response.data.token))
-            // setTokenWithExpiration(response.data.token)
-    
+            localStorage.setItem("token", JSON.stringify(response.data.token))    
             localStorage.setItem("user", JSON.stringify(response.data.user))
+
+            setTimeout(() => {
+                localStorage.removeItem("token")
+                localStorage.removeItem("user")
+                toast.error("Session expired, please login again")
+                dispatch(logout(navigate))
+              }, 3*24*60*60*1000);
+
             navigate("/dashboard/my-profile")
             dispatch(setFromType("login"))
             
