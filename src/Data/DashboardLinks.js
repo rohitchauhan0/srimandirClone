@@ -56,12 +56,7 @@ export const DASHBOARD_LINK = [
     path:"/dashboard/my-items",
         accountType: ACCOUNT_TYPE.ADMIN
     },
-    {
-        id:7,
-        title:"Enrolled user",
-        accountType: ACCOUNT_TYPE.ADMIN,
-    path:"/dashboard/Enrolled-user",
-    },
+   
     {
         id:11,
         title:"Booked pooja",
@@ -115,6 +110,18 @@ export const DASHBOARD_LINK = [
         title:"Create temple details",
         accountType: ACCOUNT_TYPE.ADMIN,
     path:"/dashboard/temple-detail",
+    },
+    {
+        id:7,
+        title:"Enrolled user",
+        accountType: ACCOUNT_TYPE.ADMIN,
+    path:"/dashboard/Enrolled-user",
+    },
+    {
+        id:20,
+        title:"Astrology user",
+        accountType: ACCOUNT_TYPE.ADMIN,
+    path:"/dashboard/astrology-user",
     },
     
 

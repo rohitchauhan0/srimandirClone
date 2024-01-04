@@ -34,6 +34,8 @@ import AllCoupon from "./component/core/Dashboard/Coupon/AllCoupon";
 import CreateTempleLoc from "./component/core/Dashboard/TempleLoc/CreateTempleLoc";
 import CreateTempleDetails from "./component/core/Dashboard/TempleDetail/CreateTempleDetails";
 import TempleById from "./component/core/TempleSection/TempleById";
+import Astrology from "./Pages/Astrology";
+import GetAstrologyUser from "./component/core/Dashboard/Astrology/GetAstrologyUser";
 
 
 const App = () => {
@@ -50,6 +52,7 @@ const App = () => {
         <Route path="/articles" element={<AllArticles />} />
         <Route path="/temples" element={<TemplePage />} />
         <Route path="/temples/:templeId" element={<TempleById />} />
+        <Route path="/astrology" element={<Astrology />} />
 
         <Route path="/dashboard" element={<Dashboard />}>
           <Route path="/dashboard/my-profile" element={<PrivateRoute><MyProfile /></PrivateRoute>} />
@@ -76,6 +79,7 @@ const App = () => {
           <Route path="/dashboard/all-Coupon" element={<PrivateRoute><AllCoupon /></PrivateRoute>} />
           <Route path="/dashboard/temple-loc" element={<PrivateRoute><CreateTempleLoc /></PrivateRoute>} />
           <Route path="/dashboard/temple-detail" element={<PrivateRoute><CreateTempleDetails /></PrivateRoute>} />
+          <Route path="/dashboard/astrology-user" element={<PrivateRoute><GetAstrologyUser /></PrivateRoute>} />
         </Route>
       </Routes>
       

@@ -10,6 +10,7 @@ const sectionRoutes = require('./Routes/SectionRoutes')
 const SubsectionRoutes = require('./Routes/SubsectionRoutes')
 const reviewRoutes = require('./Routes/ReviewRoute') 
 const templeRoutes = require('./Routes/TempleRoute') 
+const astrologyRoutes = require('./Routes/AstrologyRoute') 
 require('dotenv').config()
  
 
@@ -44,6 +45,7 @@ app.use("/api/v1/section", sectionRoutes)
 app.use("/api/v1/subsection", SubsectionRoutes)
 app.use("/api/v1/review", reviewRoutes)
 app.use("/api/v1/temple", templeRoutes)
+app.use("/api/v1/astrology", astrologyRoutes)
 
 
 

@@ -83,3 +83,10 @@ export const templeEndPoint = {
 }
 
 
+export const astrologyEndPoint = {
+        CREATE_FORM_API : BASE_URL + "/astrology/createForm",
+        GET_FORM_API : BASE_URL + "/astrology/getForm",
+        DELETE_FORM_API : BASE_URL + "/astrology/deleteForm",
+
+}
+

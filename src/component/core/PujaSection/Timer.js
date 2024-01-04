@@ -51,7 +51,22 @@ const Timer = ({targetDate}) => {
             </div>
            </div>
           ) : (
-            <p>Countdown expired!</p>
+            <div className=' flex items-center gap-5'>
+            <div className='  flex bg-orange-200 lg:flex-row flex-col items-center lg:items-end lg:p-3 p-1 rounded-xl gap-1 lg:gap-3'>
+                <p className=' text-lg lg:text-2xl font-bold text-orange-500  animate-pulse'>0</p>
+                <p className='text-orange-500'>Days</p>
+            </div> 
+            <div className=' flex bg-orange-200 lg:flex-row flex-col items-center lg:items-end lg:p-3 p-1 rounded-xl gap-1 lg:gap-3'>
+                <p className='  text-lg lg:text-2xl font-bold text-orange-500  animate-pulse'>0</p>
+                <p className='text-orange-500'>Hours</p>
+            </div> <div className=' flex bg-orange-200 lg:flex-row flex-col items-center lg:items-end lg:p-3 p-1 rounded-xl gap-1 lg:gap-3'>
+                <p className='  text-lg lg:text-2xl font-bold text-orange-500 animate-pulse'>0</p>
+                <p className='text-orange-500'>Minutes</p>
+            </div> <div className=' flex bg-orange-200 lg:flex-row flex-col items-center lg:items-end lg:p-3 p-1 rounded-xl gap-1 lg:gap-3'>
+                <p className=' text-lg lg:text-2xl font-bold text-orange-500 animate-pulse'>0</p>
+                <p className='text-orange-500'>Seconds</p>
+            </div>
+           </div>
           )}
         </div>
   )
