@@ -36,6 +36,8 @@ import CreateTempleDetails from "./component/core/Dashboard/TempleDetail/CreateT
 import TempleById from "./component/core/TempleSection/TempleById";
 import Astrology from "./Pages/Astrology";
 import GetAstrologyUser from "./component/core/Dashboard/Astrology/GetAstrologyUser";
+import ForgotPassword from "./Pages/ForgotPassword";
+import UpdateForgotPassword from "./Pages/UpdateForgotPassword";
 
 
 const App = () => {
@@ -53,6 +55,8 @@ const App = () => {
         <Route path="/temples" element={<TemplePage />} />
         <Route path="/temples/:templeId" element={<TempleById />} />
         <Route path="/astrology" element={<Astrology />} />
+        <Route path="/update-password" element={<ForgotPassword />} />
+        <Route path="/update-password/:token" element={<UpdateForgotPassword />} />
 
         <Route path="/dashboard" element={<Dashboard />}>
           <Route path="/dashboard/my-profile" element={<PrivateRoute><MyProfile /></PrivateRoute>} />

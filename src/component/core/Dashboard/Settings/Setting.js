@@ -129,7 +129,7 @@ const Setting = () => {
           <input
             type="password"
             className=" w-full border-2 border-orange-500  rounded-xl p-2"
-            placeholder="Enter number here"
+            placeholder="Enter password here"
             value={oldPassword}
             onChange={(e) => {
               setoldPassword(e.target.value);
@@ -143,7 +143,7 @@ const Setting = () => {
           <input
             type="password"
             className=" w-full border-2 border-orange-500  rounded-xl p-2"
-            placeholder="Enter number here"
+            placeholder="Enter password here"
             value={newPassword}
             onChange={(e) => {
               setnewPassword(e.target.value);

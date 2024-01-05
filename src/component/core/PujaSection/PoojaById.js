@@ -318,6 +318,9 @@ const PoojaById = () => {
         </div>
       </div>
     </div>
+    <div className=" w-full lg:hidden bg-green-500 p-2 flex items-center justify-center text-white gap-2 sticky bottom-0 left-0 rounded-xl" onClick={() => handleScrolltoDiv()}>
+                Book Now <FaArrowRight />
+    </div>
     <Footer/>
    </>
   );

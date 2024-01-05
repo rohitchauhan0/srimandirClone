@@ -9,6 +9,8 @@ export const authEndPoints = {
         UPDATE_IMAGE_ID_API : BASE_URL + "/auth/updateImage",
         UPDATE_PHONE_NUM_ID_API : BASE_URL + "/auth/updatePhoneNum",
         CHANGE_PASSWORD_API : BASE_URL + "/auth/changePassword",
+        RESET_PASSWORD_TOKEN_API : BASE_URL + "/auth/resetPasswordToken",
+        RESET_PASSWORD_API : BASE_URL + "/auth/resetPassword",
 }
 
 export const pujaEndPoints = {

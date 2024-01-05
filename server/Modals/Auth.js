@@ -36,7 +36,8 @@ const AuthModal = new mongoose.Schema({
     image:{
         type:String,
         
-    }
+    },
+   
 })
 
 module.exports = mongoose.model("user", AuthModal)

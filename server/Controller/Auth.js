@@ -78,7 +78,8 @@ exports.sendOtp = async (req, res) => {
   try {
     const { email } = req.body;
 
-    const checkUser = await Otp.findOne({ email });
+    const checkUser = await User.findOne({ email:email });
+    console.log(checkUser)
     if (checkUser) {
       return res.status(400).json({
         success: false,

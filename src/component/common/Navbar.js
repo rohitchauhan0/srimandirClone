@@ -20,6 +20,9 @@ import { IoMenuOutline } from "react-icons/io5";
 import { RxCross2 } from "react-icons/rx";
 import { FaBook } from "react-icons/fa";
 import { GiByzantinTemple } from "react-icons/gi";
+import callImage from "../../Assets/call.png"
+import gmailImage from "../../Assets/gmail.png"
+import whatsappIconImage from "../../Assets/whatsappIcon.png"
 
 const Navbar = () => {
   const [showLibrary, setshowLibrary] = useState(true);
@@ -75,7 +78,7 @@ const Navbar = () => {
         <div
           className={` flex items-center  flex-row  justify-between py-3  max-w-screen-xl mx-auto lg:px-0 px-5`}
         >
-          <Link>
+          <Link to={"/"}>
             <img src={logo} alt="" />
           </Link>
 
@@ -314,8 +317,10 @@ const Navbar = () => {
                                   <FaBook className="  p-2 rounded-xl text-3xl bg-white shadow-sm shadow-black" />
                                 ) : data.title === "Mantra" ? (
                                   <GiByzantinTemple className="  p-2 rounded-xl text-3xl bg-white shadow-sm shadow-black" />
-                                ) : (
-                                  ""
+                                ) : data.title === "Incarnations of gods and goddesses" ? (
+                                  <FaMusic  className="   p-2 rounded-xl text-3xl bg-white shadow-sm shadow-black" />
+                                ): (
+                                  <FaBook className="   p-2 rounded-xl text-3xl bg-white shadow-sm shadow-black" />
                                 )}
 
                                 <div>
@@ -334,6 +339,24 @@ const Navbar = () => {
               <p className=" text-[14px] font-semibold text-gray-600">
                   Help and support for Puja Booking
                 </p>
+                <div className=" p-2 bg-gray-200 rounded-xl flex gap-3 flex-row items-center">
+                  <img src={callImage} alt="" className=" w-[30px] -rotate-45 object-cover rounded-full h-[30px]" />
+                  <div className=" flex flex-col">
+                    <Link to={"tel:+919213996943"} className=" text-[14px] font-semibold">+91 9213996943</Link>
+                    <Link to={"tel:+919213996943"} className=" text-[11px] text-gray-500">You can call us from 10 AM - 8 PM</Link>
+
+                  </div>
+                </div>
+                <div className=" flex w-full justify-between">
+                          <div className=" p-2 bg-gray-200 rounded-xl flex gap-3 flex-row items-center">
+                          <img src={gmailImage} alt="" className=" w-[30px]  object-cover rounded-full h-[30px]" />
+                          <Link to={"mailto:Palmakku08@gmail.com"} className=" text-[12px] font-semibold">Email us</Link>
+                          </div>
+                           <div className=" p-2 bg-gray-200 rounded-xl flex gap-3 flex-row items-center">
+                          <img src={whatsappIconImage} alt="" className=" w-[20px]  object-cover rounded-full h-[30px]" />
+                          <Link to={"https://wa.me/919213996943"} className=" text-[12px] font-semibold">Whatsapp us</Link>
+                          </div>
+                </div>
               </div>
             </div>
 

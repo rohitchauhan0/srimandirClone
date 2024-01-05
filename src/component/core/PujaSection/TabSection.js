@@ -5,8 +5,8 @@ const TabSection = ({textColor1, textColor2, textColor3, textColor4, textColor5,
    
     
   return (
-    <div className=' sticky mt-28 top-[105px] z-[1000] min-w-screen border-t border-b bg-white border-gray-300  mb-7 lg:block hidden '>
-        <div className=' max-w-screen-xl mx-auto p-3 text-gray-500 flex items-center justify-between text-lg font-bold'>
+    <div className=' sticky mt-28 top-[105px] z-[1000] min-w-screen border-t border-b bg-white border-gray-300  mb-7 lg:block hidden  '>
+        <div className=' max-w-screen-xl mx-auto p-3 text-gray-500 flex items-center justify-between text-lg font-bold '>
           <p className={`${textColor1}`}>About Puja</p>
           <p className={`${textColor2}`}>Benefits</p>
           <p className={`${textColor3}`}>Process</p>

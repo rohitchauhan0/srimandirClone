@@ -6,6 +6,7 @@ import logo from "../../../Assets/srimandir_logo.svg"
 import VerificaionEmail from "./VerificaionEmail";
 import { useDispatch, useSelector } from "react-redux";
 import { setFromType } from "../../../Slices/AuthSlice";
+import { Link } from "react-router-dom";
 
 const Template = ({ cancelHandler }) => {
     const {formType} = useSelector((state)=> state.auth)
@@ -52,7 +53,7 @@ const Template = ({ cancelHandler }) => {
                     policy
                   </p>
                 ) : (
-                  formType === "login" && <p className=" text-[14px]">Forgot password</p>
+                  formType === "login" && <Link to={"/update-password"} onClick={cancelHandler} className=" text-[14px] hover:text-cyan-500 transition-all duration-200">Forgot password</Link>
                 )}
               </div>
               {formType === "signup" ? (

@@ -26,7 +26,6 @@ const Sidebar = () => {
    </div>
         {
             DASHBOARD_LINK?.map((data, index)=>{
-                matchRoute(data.path)
                 if(data?.accountType && user?.accountType !== data?.accountType) return null
                 return <Link to={data.path}  key={index}
                 className={`${matchRoute(data.path ) ? " text-orange-500":" text-black"} flex items-center gap-3`}

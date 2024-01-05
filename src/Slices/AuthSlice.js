@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit"
 const intialState = {
-    token:localStorage.getItem("token")? JSON.parse(localStorage.getItem(("token"))): null,
+    token:localStorage.getItem("token")? JSON.parse(localStorage.getItem("token")): null,
     loading:false,
     signupData:null,
     formType:"login"
