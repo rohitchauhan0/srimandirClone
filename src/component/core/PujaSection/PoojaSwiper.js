@@ -26,28 +26,28 @@ const PoojaSwiper = ({ poojaDetails }) => {
           <img
             src={poojaDetails.image1}
             alt=""
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover lg:min-h-[400px] min-h-[300px] max-h-[300px] lg:max-h-[400px]"
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
             src={poojaDetails.image2}
             alt=""
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover lg:min-h-[400px] min-h-[300px] max-h-[300px] lg:max-h-[400px]"
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
             src={poojaDetails.image3}
             alt=""
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover lg:min-h-[400px] min-h-[300px] max-h-[300px] lg:max-h-[400px]"
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
             src={poojaDetails.image4}
             alt=""
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover lg:min-h-[400px] min-h-[300px] max-h-[300px] lg:max-h-[400px]"
           />
         </SwiperSlide>
       </Swiper>
