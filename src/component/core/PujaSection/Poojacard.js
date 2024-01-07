@@ -23,7 +23,7 @@ const Poojacard = () => {
   }, []);
 
   return (
-    <div className=" grid gap-9 sm:grid-cols-2 lg:grid-cols-3 mt-5 bg-white">
+    <div className=" grid gap-9 sm:grid-cols-2 lg:grid-cols-3 bg-white">
         {poojaDetails.map((data, index) => {
           return (
             <div className=" p-3 rounded-xl border-[1px] border-gray-400 flex flex-col justify-between min-h-[500px] cursor-pointer"
@@ -46,11 +46,11 @@ const Poojacard = () => {
                   {data.date}
                 </div>
               </div>
-              <button className=" w-full p-2 rounded-xl bg-green-500 text-white font-bold cursor-pointer flex items-center justify-center "
-             
-              >
-                <p className=" flex items-center gap-2">Participate <FaArrowRight /></p>
-              </button>
+              <button className=" w-full p-2 rounded-xl text-white font-bold cursor-pointer gradientButton relative overflow-hidden flex items-center gap-3 justify-center
+              ">
+      <div className=" w-[80px] h-[150px] bg-white -top-2 -left-2 rotate-45 absolute -skew-x-[45deg] opacity-40 animateButton"></div>
+      Participate  <FaArrowRight /></button>
+            
             </div>
           );
         })}

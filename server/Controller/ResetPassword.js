@@ -19,7 +19,7 @@ exports.resetPasswordToken = async(req, res)=>{
             resetPasswordExpires:Date.now() + 3600000
         },{new:true})
 
-        const url = `http://localhost:3000/update-password/${token}`;
+        const url = `https://srimandir-clone.vercel.app/update-password/${token}`;
 
         await mailSender(email, "Password reset", `Your Link for email verification is ${url}. Please click this url to reset your password.`)
         res.json({

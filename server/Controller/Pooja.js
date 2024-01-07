@@ -2,11 +2,13 @@ const User = require('../Modals/Auth')
 const PoojaBenefits = require('../Modals/PoojaBenefits')
 const pooja = require('../Modals/PoojaModal')
 const { uploadImageToCloudinary } = require('../Utils/uploadImage')
+const { Types: { ObjectId } } = require('mongoose');
 
 
 exports.createPooja = async(req, res)=>{
     try {
         const {title, description, address, date,templeDetail, personName, personExperience, poojaBenefits, templeName } = req.body
+        const getBenefits = poojaBenefits?.split(",")
         const image1 = req.files.image1
         const image2 = req.files.image2
         const image3 = req.files.image3
@@ -29,7 +31,7 @@ exports.createPooja = async(req, res)=>{
             image2:thumbnail2.secure_url,
             image3:thumbnail3.secure_url,
             image4:thumbnail4.secure_url,
-            poojaBenefits:poojaBenefits,
+            poojaBenefits:getBenefits
         })
 
 

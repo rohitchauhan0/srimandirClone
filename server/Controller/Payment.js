@@ -94,12 +94,15 @@ const enrolledUser = async (
       userId: userId,
       totalPrice,
     });
+    const admin = "Admin"
 
     const user = await User.findByIdAndUpdate({_id:userId}, {$push:{
       pooja:createPayment._id
     }}, {new:true});
 
+    const adminUser = await User.findOne({accountType:admin})
 
+    mailSender(adminUser.email, "New puja booked", `A new puja booked by ${user.phoneNum}. check now!`)
     mailSender(user.email, "Payment received", "Thank you");
   } catch (error) {
     console.log(error);

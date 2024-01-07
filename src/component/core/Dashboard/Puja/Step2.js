@@ -12,7 +12,6 @@ const Step2 = () => {
   const [benefits, setbenefits] = useState([]);
   const [poojaBenefits, setPoojaBenefits] = useState(pooja.poojaBenefits || []);
   const dispatch = useDispatch();
-
   useEffect(() => {
     const getBenefits = async () => {
       try {

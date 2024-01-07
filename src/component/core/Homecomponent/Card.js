@@ -25,9 +25,9 @@ const Card = ({ image, title, text1, text2, poojaId }) => {
          {text2}
         </div>
       </div>
-      <button className=" w-full p-2 rounded-xl bg-green-500 text-white font-bold cursor-pointer"
-      
-      >Participate</button>
+      <button className=" w-full p-2 rounded-xl text-white font-bold cursor-pointer gradientButton relative overflow-hidden">
+      <div className=" w-[80px] h-[150px] bg-white -top-2 -left-2 rotate-45 absolute -skew-x-[45deg] opacity-40 animateButton"></div>
+      Participate</button>
     </div>
   );
 };

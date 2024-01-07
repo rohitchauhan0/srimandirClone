@@ -63,15 +63,15 @@ const TemplePage = () => {
    <>
      <div className=" flex  flex-col w-full ">
     <div className=' flex w-full lg:flex-row flex-col items-center justify-between max-w-screen-2xl bg-pink-50 mx-auto  '>
-      <div className=' w-full lg:w-[50%] h-full lg:mt-10 mt-20 flex items-center gap-10 flex-col px-10'>
-      <h1 className=' text-4xl text-black font-bold leading-[50px]'>Connect with holy pilgrimages and divine temples of India</h1>
+      <div className=' w-full lg:w-[50%] h-full lg:mt-10 mt-20 flex items-center gap-10 flex-col lg:px-10 px-2'>
+      <h1 className=' lg:text-4xl text-3xl text-black font-bold leading-[50px]'>Connect with holy pilgrimages and divine temples of India</h1>
                 <ul className=' flex flex-col gap-3 text-gray-500 items-start w-full px-5'>
-                    <li className=' flex gap-2 items-center text-xl'><FcOk /> Learn about the culture and religious history of temples</li>
-                    <li className=' flex gap-2 items-center text-xl'><FcOk />Connect with temples of your favourite deities</li>
-                    <li className=' flex gap-2 items-center text-xl'><FcOk />Offer charity work and donate in your favourite temples</li>
+                    <li className=' flex gap-2 items-center text-lg lg:text-xl'><FcOk /> Learn about the culture and religious history of temples</li>
+                    <li className=' flex gap-2 items-center text-lg lg:text-xl'><FcOk />Connect with temples of your favourite deities</li>
+                    <li className=' flex gap-2 items-center text-lg lg:text-xl'><FcOk />Offer charity work and donate in your favourite temples</li>
                 </ul>
                 <div className=' flex gap-3 w-full mt-3'>
-                    <button className=' p-3 rounded-xl bg-orange-500 text-white' onClick={()=> handleScrolltoDiv()} >Explore temples of india</button>
+                    <button className=' p-3 rounded-xl bg-gradient-to-r from-orange-500 to-red-500 text-white' onClick={()=> handleScrolltoDiv()} >Explore temples of india</button>
                 </div>
       </div>
       <div className='w-full lg:w-[50%] h-full lg:mt-10 mt-20 flex items-center gap-3 flex-col px-10'>

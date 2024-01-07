@@ -1,11 +1,17 @@
 const Astrology = require('../Modals/Autrology')
+const { mailSender } = require('../Utils/Mailsender')
+const User = require('../Modals/Auth')
 
 exports.createForm = async(req, res)=>{
     try {
-        const {fullName, phoneNum, dob, address}= req.body
+        const {fullName, phoneNum, dob, address, timeOfBirth, placeOfBirth}= req.body
         await Astrology.create({
-            fullName, phoneNum, dob, address
+            fullName, phoneNum, dob, address, timeOfBirth, placeOfBirth
         })
+        const Admin = "Admin"
+        const adminDetail = await User.findOne({accountType:Admin})
+
+        mailSender(adminDetail.email, "Astrology form", "A new user filled the astrology form")
 
         return res.status(200).json({
             success:true,
@@ -23,7 +29,7 @@ exports.createForm = async(req, res)=>{
 
 exports.getAstrologyForm = async(req, res)=>{
     try {
-        const response = await Astrology.find({}).sort({createdAt:-1})
+        const response = await Astrology.find({}).sort({createdAt:-1}).exec()
         return res.status(200).json({
             success:true,
             data:response

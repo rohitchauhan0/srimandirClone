@@ -97,7 +97,7 @@ const PaymentPage = () => {
     bookPuja(token, poojaId, packageId,offeringItems, navigate, dispatch, totalPrice, user )
     }
     else{
-      toast.error("Admin cann't book pooja")
+      toast.error("Admin can't book pooja")
     }
   }
 
@@ -105,13 +105,13 @@ const PaymentPage = () => {
 
   return (
    <>
-     <div className=" w-full min-h-screen max-w-screen-xl mx-auto pt-20 flex flex-col gap-3">
+     <div className=" w-full min-h-screen max-w-screen-xl mx-auto pt-20 flex flex-col gap-3 lg:px-0 px-3">
       <h1 className=" text-2xl font-bold">Review Booking</h1>
       <hr className=" w-full h-[1px] bg-gray-500" />
       <div className=" flex lg:flex-row flex-col-reverse gap-10 mt-10 h-full">
         <div className=" lg:w-[40%] flex flex-col gap-5 pb-20">
           <div className=" flex flex-col gap-2 p-3 border border-gray-400 rounded-xl bg-gray-50">
-            <h2 className=" text-2xl font-bold">{poojadetail.title}</h2>
+            <h2 className=" lg:text-2xl text-xl font-bold">{poojadetail.title}</h2>
             <p className=" text-xl font-semibold text-gray-500">
               {packageDetails.title}
             </p>
@@ -140,12 +140,12 @@ const PaymentPage = () => {
                }
           </div>
           <div className=" flex flex-col gap-2 p-3 border border-gray-400 rounded-xl bg-gray-50 text-[12px]">
-                <p>{user?.fullName}</p>
+                <p className=" text-orange-500 font-semibold">{user?.fullName}</p>
                 <p>{user?.phoneNum} (Your whatsapp number)</p>
           </div> 
           <div className=" flex flex-col gap-2 p-3 text-[12px]">
                 <h2 className=" text-xl font-bold">Bill details</h2>
-                <p>{user?.phoneNum} (Your whatsapp number)</p>
+                <p className="">{user?.phoneNum} (Your whatsapp number)</p>
                 <div className=" flex justify-between">
                 <p className=" text-xl font-semibold text-gray-500">
               {packageDetails.title}
@@ -169,11 +169,14 @@ const PaymentPage = () => {
                     }
                 </div>)
             }
-            <button className=" w-full py-2 bg-green-600 rounded-xl font-bold text-white"
+            <button className=" w-full p-2 rounded-xl text-white font-bold cursor-pointer gradientButton relative overflow-hidden" onClick={()=> paymentHandler()}>
+      <div className=" w-[80px] h-[150px] bg-white -top-2 -left-2 rotate-45 absolute -skew-x-[45deg] opacity-40 animateButton"></div>
+      Book now ₹ {totalPrice}</button>
+            {/* <button className=" w-full py-2 bg-green-600 rounded-xl font-bold text-white"
             onClick={()=> paymentHandler()}
             >
               Book now ₹ {totalPrice}
-            </button>
+            </button> */}
         </div>
        
        <div className=" lg:w-[40%] flex flex-col gap-5">

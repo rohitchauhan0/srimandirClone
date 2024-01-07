@@ -13,6 +13,12 @@ const AstrologyModal = new mongoose.Schema({
     dob:{
         type:Date
     },
+    timeOfBirth:{
+        type:Date
+    },
+    placeOfBirth:{
+        type:Date
+    },
     createdAt:{
         type:Date,
         default: Date.now()

@@ -90,3 +90,26 @@ background: linear-gradient(0deg, rgba(67,67,67,0) 0%, rgba(255,253,253,0.997724
 .animate-spin {
   animation: spin 15s linear infinite;
 }
+
+
+.gradientButton{
+  background: linear-gradient(82deg, rgba(255,90,7,0.9977240896358543) 0%, rgba(255,0,0,0.8604691876750701) 100%);
+}
+.animateButton {
+  position: absolute;
+  background-color: white;
+  width: 50px;
+  height: 150px;
+  animation: moveElement linear infinite 2s;
+  filter: blur(10px);
+  transform: rotate(45deg);
+}
+
+@keyframes moveElement {
+  0%{
+   transform: translateX(0%);
+  }
+  100%{
+  transform: translateX(1200%);
+  }
+}

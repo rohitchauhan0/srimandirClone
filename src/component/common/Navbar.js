@@ -172,7 +172,7 @@ const Navbar = () => {
             <div className=" lg:block  hidden">
               {token === null ? (
                 <button
-                  className=" text-[15px] rounded-lg  px-5 py-2 bg-orange-400 text-white lg:block hidden"
+                  className=" text-[15px] rounded-lg  px-5 py-2 bg-gradient-to-r from-orange-500 to-red-400 text-white lg:block hidden"
                   onClick={() => {
                     setmodal(true);
                   }}
