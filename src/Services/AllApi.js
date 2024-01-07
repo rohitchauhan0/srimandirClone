@@ -11,6 +11,7 @@ export const authEndPoints = {
         CHANGE_PASSWORD_API : BASE_URL + "/auth/changePassword",
         RESET_PASSWORD_TOKEN_API : BASE_URL + "/auth/resetPasswordToken",
         RESET_PASSWORD_API : BASE_URL + "/auth/resetPassword",
+        CONTACT_US_API : BASE_URL + "/auth/contactUs",
 }
 
 export const pujaEndPoints = {

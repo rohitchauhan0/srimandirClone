@@ -337,12 +337,19 @@ const PoojaById = () => {
           </div>
         </div>
       </div>
-      <div
-        className=" w-full lg:hidden bg-green-500 p-2 flex items-center justify-center text-white gap-2 sticky bottom-0 left-0 rounded-xl"
+      <button
+                  className="lg:hidden w-full p-2 sticky bottom-1 left-0 rounded-xl text-white font-bold cursor-pointer gradientButton overflow-hidden flex gap-2 items-center justify-center"
+                  onClick={() => handleScrolltoDiv()}
+                >
+                  <div className=" w-[80px] h-[150px] bg-white -top-2 -left-2 rotate-45 absolute -skew-x-[45deg] opacity-40 animateButton"></div>
+                  Book Now <FaArrowRight />
+                </button>
+      {/* <div
+        className=" w-full lg:hidden bg-green-500 p-2 flex items-center justify-center text-white gap-2 sticky bottom-2 left-0 rounded-xl"
         onClick={() => handleScrolltoDiv()}
       >
         Book Now <FaArrowRight />
-      </div>
+      </div> */}
       <Footer />
     </>
   );

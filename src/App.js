@@ -38,6 +38,7 @@ import Astrology from "./Pages/Astrology";
 import GetAstrologyUser from "./component/core/Dashboard/Astrology/GetAstrologyUser";
 import ForgotPassword from "./Pages/ForgotPassword";
 import UpdateForgotPassword from "./Pages/UpdateForgotPassword";
+import ContactUs from "./Pages/ContactUs";
 
 
 const App = () => {
@@ -57,6 +58,7 @@ const App = () => {
         <Route path="/astrology" element={<Astrology />} />
         <Route path="/update-password" element={<ForgotPassword />} />
         <Route path="/update-password/:token" element={<UpdateForgotPassword />} />
+        <Route path="/contact-us" element={<ContactUs />} />
 
         <Route path="/dashboard" element={<Dashboard />}>
           <Route path="/dashboard/my-profile" element={<PrivateRoute><MyProfile /></PrivateRoute>} />
