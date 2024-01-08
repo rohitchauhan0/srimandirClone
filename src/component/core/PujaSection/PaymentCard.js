@@ -4,14 +4,16 @@ import { apiConnector } from "../../../Services/ApiConnector";
 import { FaDotCircle } from "react-icons/fa";
 import { FaArrowRight } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import toast from "react-hot-toast";
+import { setShowAuthModal } from "../../../Slices/AuthSlice";
 
 const PaymentCard = ({ poojaId }) => {
   const { GET_ALL_PACKAGE_API } = packageEnPoints;
   const [packageDetails, setpackageDetails] = useState([]);
   const { token } = useSelector((state) => state.auth);
   const navigate = useNavigate();
+  const dispatch = useDispatch()
   useEffect(() => {
     const getPackgeDetails = async () => {
       try {
@@ -39,7 +41,7 @@ const PaymentCard = ({ poojaId }) => {
 
   return (
     <div className=" flex flex-col gap-8 lg:px-0 px-3">
-      <h2 className=" text-4xl font-bold">Select pooja package</h2>
+      <h2 className=" text-xl lg:text-4xl font-bold ">Select pooja package</h2>
       <div className=" grid gap-9 sm:grid-cols-2 lg:grid-cols-4 ">
         {packageDetails.map((data, index) => {
           return (
@@ -93,7 +95,7 @@ const PaymentCard = ({ poojaId }) => {
                   onClick={() => {
                     token !== null
                       ? navigate(`/puja/${poojaId}/${data._id}`)
-                      : toast.error("Please login to continue");
+                      : dispatch(setShowAuthModal(true));
                   }}
                 >
                   <div className=" w-[80px] h-[150px] bg-white -top-2 -left-2 rotate-45 absolute -skew-x-[45deg] opacity-40 animateButton"></div>

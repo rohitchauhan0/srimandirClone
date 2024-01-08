@@ -6,6 +6,7 @@ import { GiByzantinTemple } from 'react-icons/gi'
 import Timer from '../../PujaSection/Timer'
 import { RiWhatsappLine } from 'react-icons/ri'
 import { IoMdCalendar } from 'react-icons/io'
+import { formattedDate } from '../../../../Utils/DateFormatter'
 
 const EnrolledUser = () => {
     const {GET_ALL_PAYMENT_API} = paymentEndPoint
@@ -53,7 +54,8 @@ const EnrolledUser = () => {
                 </div>
                 <div className=" flex gap-4 text-[20px] items-center text-gray-500">
                   <IoMdCalendar className=" text-orange-500" />
-                  {data.poojaId?.date}
+                  {/* {data.poojaId?.date} */}
+                  {formattedDate(data.poojaId?.date)}
               </div>
                 <div className=" text-gray-500 flex  gap-4 text-[17px] justify-between">
                 <p>{data.packageId?.title}</p>

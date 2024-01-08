@@ -23,6 +23,7 @@ import { GiByzantinTemple } from "react-icons/gi";
 import callImage from "../../Assets/call.png"
 import gmailImage from "../../Assets/gmail.png"
 import whatsappIconImage from "../../Assets/whatsappIcon.png"
+import { setShowAuthModal } from "../../Slices/AuthSlice";
 
 const Navbar = () => {
   const [showLibrary, setshowLibrary] = useState(true);
@@ -50,6 +51,7 @@ const Navbar = () => {
     };
     token !== null && getUserDetail();
   }, []);
+  const {showAuthModal} = useSelector((state)=> state.auth)
 
 
   const location = useLocation();
@@ -174,7 +176,7 @@ const Navbar = () => {
                 <button
                   className=" text-[15px] rounded-lg  px-5 py-2 bg-gradient-to-r from-orange-500 to-red-400 text-white lg:block hidden"
                   onClick={() => {
-                    setmodal(true);
+                    dispatch(setShowAuthModal(true))
                   }}
                 >
                   Login
@@ -376,7 +378,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      {modal && <Template cancelHandler={() => setmodal(null)} />}
+      {showAuthModal && <Template cancelHandler={() => dispatch(setShowAuthModal(false))} />}
     </>
   );
 };

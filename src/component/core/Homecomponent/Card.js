@@ -3,6 +3,7 @@ import photo1 from "../../../Assets/photo1.webp";
 import { GiByzantinTemple } from "react-icons/gi";
 import { IoMdCalendar } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
+import { formattedDate } from "../../../Utils/DateFormatter";
 
 const Card = ({ image, title, text1, text2, poojaId }) => {
   const navigate = useNavigate()
@@ -22,7 +23,8 @@ const Card = ({ image, title, text1, text2, poojaId }) => {
         </div>
         <div className=" text-gray-500 flex  gap-4 text-[17px]">
           <IoMdCalendar className=" text-orange-500" />
-         {text2}
+         {/* {text2} */}
+         {formattedDate(text2)}
         </div>
       </div>
       <button className=" w-full p-2 rounded-xl text-white font-bold cursor-pointer gradientButton relative overflow-hidden">

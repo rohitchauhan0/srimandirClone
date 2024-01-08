@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux'
 import { GiByzantinTemple } from 'react-icons/gi'
 import Timer from '../../PujaSection/Timer'
 import { IoMdCalendar } from 'react-icons/io'
+import { formattedDate } from '../../../../Utils/DateFormatter'
 
 const BookedPooja = () => {
     const {GET_USER_BY_ID_API} = authEndPoints
@@ -51,7 +52,8 @@ const BookedPooja = () => {
                 </div>
                 <div className=" flex gap-4 text-[20px] items-center justify-center text-gray-500">
                   <IoMdCalendar className=" text-orange-500" />
-                  {data.poojaId.date}
+                  {/* {data.poojaId.date} */}
+                  {formattedDate(data?.poojaId?.date)}
               </div>
                 <div className=" text-gray-500 flex  gap-4 text-[17px]">
                 <p>{data.packageId.title}</p>

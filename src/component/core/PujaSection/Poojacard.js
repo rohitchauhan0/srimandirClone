@@ -5,6 +5,7 @@ import { GiByzantinTemple } from "react-icons/gi";
 import { IoMdCalendar } from "react-icons/io";
 import { FaArrowRight } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
+import { formattedDate } from "../../../Utils/DateFormatter";
 
 const Poojacard = () => {
   const { GET_ALL_PUJA_API } = pujaEndPoints;
@@ -43,7 +44,8 @@ const Poojacard = () => {
                 </div>
                 <div className=" text-gray-500 flex  gap-4 text-[17px]">
                   <IoMdCalendar className=" text-orange-500" />
-                  {data.date}
+                  {/* {data.date} */}
+                  {formattedDate(data?.date)}
                 </div>
               </div>
               <button className=" w-full p-2 rounded-xl text-white font-bold cursor-pointer gradientButton relative overflow-hidden flex items-center gap-3 justify-center

@@ -19,6 +19,7 @@ import user3 from "../../../Assets/user/image3.avif";
 import user4 from "../../../Assets/user/image4.avif";
 import user5 from "../../../Assets/user/image5.jpg";
 import Footer from "../../common/Footer";
+import { formattedDate } from "../../../Utils/DateFormatter";
 
 const PoojaById = () => {
   const { poojaId } = useParams();
@@ -143,7 +144,8 @@ const PoojaById = () => {
 
                 <div className=" flex gap-4 text-[20px] items-center justify-center text-gray-500">
                   <IoMdCalendar className=" text-orange-500" />
-                  {poojadetail.date}
+                  {/* {poojadetail.date} */}
+                  {formattedDate(poojadetail.date)}
                 </div>
                 <Timer targetDate={targetDate} />
                 <div className=" flex">
@@ -344,12 +346,6 @@ const PoojaById = () => {
                   <div className=" w-[80px] h-[150px] bg-white -top-2 -left-2 rotate-45 absolute -skew-x-[45deg] opacity-40 animateButton"></div>
                   Book Now <FaArrowRight />
                 </button>
-      {/* <div
-        className=" w-full lg:hidden bg-green-500 p-2 flex items-center justify-center text-white gap-2 sticky bottom-2 left-0 rounded-xl"
-        onClick={() => handleScrolltoDiv()}
-      >
-        Book Now <FaArrowRight />
-      </div> */}
       <Footer />
     </>
   );
