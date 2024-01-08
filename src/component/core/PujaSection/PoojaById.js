@@ -17,7 +17,7 @@ import user1 from "../../../Assets/user/imag1.avif";
 import user2 from "../../../Assets/user/image2.avif";
 import user3 from "../../../Assets/user/image3.avif";
 import user4 from "../../../Assets/user/image4.avif";
-import user5 from "../../../Assets/user/image5.jpg";
+import user5 from "../../../Assets/user/image5.avif";
 import Footer from "../../common/Footer";
 import { formattedDate } from "../../../Utils/DateFormatter";
 

@@ -1,5 +1,5 @@
 import React from "react";
-import photo1 from "../../../Assets/photo1.webp";
+// import photo1 from "../../../Assets/photo1.webp";
 import { GiByzantinTemple } from "react-icons/gi";
 import { IoMdCalendar } from "react-icons/io";
 import { useNavigate } from "react-router-dom";

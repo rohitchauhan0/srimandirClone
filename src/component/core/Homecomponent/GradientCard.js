@@ -1,5 +1,4 @@
 import React from 'react'
-import icon1 from "../../../Assets/icon1.svg"
 
 const GradientCard = ({gradient, icon, title, text, textcolor}) => {
   return (
