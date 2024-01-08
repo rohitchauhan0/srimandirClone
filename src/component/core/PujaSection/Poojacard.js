@@ -27,7 +27,7 @@ const Poojacard = () => {
     <div className=" grid gap-9 sm:grid-cols-2 lg:grid-cols-3 bg-white">
         {poojaDetails.map((data, index) => {
           return (
-            <div className=" p-3 rounded-xl border-[1px] border-gray-400 flex flex-col justify-between min-h-[500px] cursor-pointer"
+            <div className=" p-3 rounded-xl border-[1px] border-gray-200 flex flex-col justify-between min-h-[500px] cursor-pointer"
              onClick={()=> navigate(`/puja/${data._id}`)}
              key={index}
             >
