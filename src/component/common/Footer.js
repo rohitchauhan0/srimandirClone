@@ -30,7 +30,7 @@ const Footer = () => {
             <Link className=" uppercase font-bold text-white text-[13px]" to={"privacy-and-policy"}>Privacy and policy</Link>
             <Link className=" uppercase font-bold text-white text-[13px]" to={"contact-us"}>Contact us</Link>
           </div>
-          <div className=" lg:hidden items-start gap-3 flex flex-col ">
+          <div className=" lg:hidden items-start gap-3 flex flex-row ">
                 <img src={insta} alt="" />
                 <img src={youtube} alt="" />
                 <img src={facebook} alt="" />
