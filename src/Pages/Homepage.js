@@ -30,6 +30,7 @@ import Footer from "../component/common/Footer";
 import { motion } from "framer-motion"
 import sunPng from "../Assets/homepageIcons/sunPng.png"
 import hanumang from "../Assets/homepageIcons/homepageHanumang.png"
+import matag from "../Assets/mataji.png"
 
 const Homepage = () => {
   const { GET_ALL_PUJA_API } = pujaEndPoints;
@@ -54,7 +55,7 @@ const Homepage = () => {
       <div className=" w-full h-fit  flex items-center justify-center">
       <img src={sunPng} alt="" className=" w-[150px] h-[120px] animate-spin" />
       </div>
-        <div className=" lg:px-0 lg:py-14 py-0  flex lg:flex-row flex-col-reverse items-center lg:mt-0 -mt-20 justify-between pt-32 mx-auto gap-3 ">
+        <div className=" max-w-screen-xl mx-auto lg:px-0 lg:py-14 py-0  flex lg:flex-row flex-col-reverse items-center lg:mt-0 -mt-20 justify-between pt-32 mx-auto gap-3 ">
           <motion.div
           initial={{y:100, opacity:0}}
           animate={{y:0, opacity:100}}
@@ -72,7 +73,7 @@ const Homepage = () => {
             </p>
           </motion.div>
           <div className=" w-full lg:w-[60%]" >
-            <img src={hanumang} alt="image" className=" w-full h-full object-cover scale-x-[-1] " title="Image" />
+            <img src={matag} alt="image" className=" w-full h-full object-cover scale-x-[-1] " title="Image" />
             
           </div>
         </div>

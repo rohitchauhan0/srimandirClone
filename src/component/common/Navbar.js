@@ -7,6 +7,7 @@ import {
   FaAngleRight,
   FaHandsPraying,
   FaMusic,
+  FaSun,
   FaUser,
 } from "react-icons/fa6";
 import Template from "../core/Auth/Template";
@@ -16,14 +17,15 @@ import { authEndPoints, sectionEndPoint } from "../../Services/AllApi";
 import { MdDashboard, MdLibraryBooks } from "react-icons/md";
 import { RiLogoutBoxRLine } from "react-icons/ri";
 import { logout } from "../../Services/Operations/AuthOper";
-import { IoMenuOutline } from "react-icons/io5";
+import { IoBonfireSharp, IoMenuOutline } from "react-icons/io5";
 import { RxCross2 } from "react-icons/rx";
 import { FaBook } from "react-icons/fa";
-import { GiByzantinTemple } from "react-icons/gi";
+import { GiByzantinTemple, GiTempleGate } from "react-icons/gi";
 import callImage from "../../Assets/call.png"
 import gmailImage from "../../Assets/gmail.png"
 import whatsappIconImage from "../../Assets/whatsappIcon.png"
 import { setShowAuthModal } from "../../Slices/AuthSlice";
+import { IoMdHome } from "react-icons/io";
 
 const Navbar = () => {
   const [showLibrary, setshowLibrary] = useState(true);
@@ -277,9 +279,14 @@ const Navbar = () => {
                   {
                     NavLinks.map((data)=>{
                       return <Link className=" flex items-center justify-between " to={data.path}>
+                      <div className=" flex gap-2  text-gray-500 text-sm items-center">
+                      {
+                        data.title === "Home"? <IoMdHome  />: data.title === "Puja" ? <IoBonfireSharp />: data.title === "Astrology" ? <FaSun />: data.title === "Temples" ? <GiTempleGate />:""
+                      }
                         {
-                          data.title !== "Library" && <p className=" text-gray-500 text-sm">{data.title}</p>
+                          data.title !== "Library" &&  <p  >{data.title}</p>
                         }
+                      </div>
                         {
                           data.title !== "Library" &&  <FaAngleRight />
                         }
