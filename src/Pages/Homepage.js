@@ -27,6 +27,9 @@ import libraryImage3 from "../Assets/homepageIcons/articles/om.png";
 import libraryImage4 from "../Assets/homepageIcons/articles/ayurved 1-01.png";
 import GetRating from "../component/common/GetRating";
 import Footer from "../component/common/Footer";
+import { motion } from "framer-motion"
+import sunPng from "../Assets/homepageIcons/sunPng.png"
+import hanumang from "../Assets/homepageIcons/homepageHanumang.png"
 
 const Homepage = () => {
   const { GET_ALL_PUJA_API } = pujaEndPoints;
@@ -46,10 +49,17 @@ const Homepage = () => {
 
   return (
    <>
-     <div className=" flex items-center justify-between flex-col min-h-screen">
-      <div className=" w-full bg-orange-50">
-        <div className=" max-w-screen-xl px-8 lg:px-3 py-14 flex lg:flex-row flex-col-reverse items-center mt-12 justify-between pt-32 mx-auto gap-3 ">
-          <div className=" w-full lg:w-[60%] flex flex-col gap-6">
+     <div className=" flex items-center justify-between flex-col min-h-screen overflow-x-hidden">
+      <div className=" w-full bg-orange-100">
+      <div className=" w-full h-fit  flex items-center justify-center">
+      <img src={sunPng} alt="" className=" w-[150px] h-[120px] animate-spin" />
+      </div>
+        <div className=" lg:px-0 lg:py-14 py-0  flex lg:flex-row flex-col-reverse items-center lg:mt-0 -mt-20 justify-between pt-32 mx-auto gap-3 ">
+          <motion.div
+          initial={{y:100, opacity:0}}
+          animate={{y:0, opacity:100}}
+          transition={{duration:1}}
+           className=" w-full lg:w-[80%] flex flex-col gap-6 lg:pl-32 lg:px-0 px-4">
             <p className=" text-2xl lg:text-4xl font-bold w-full lg:w-[60%]  leading-snug">
               Pray daily with
               <span className=" text-orange-500"> Sri Mandir</span> One App for
@@ -60,9 +70,10 @@ const Homepage = () => {
               Kundali. Updates on every Fasts and Festivals. Trusted by 10
               million+ people.
             </p>
-          </div>
-          <div className=" w-full lg:w-[40%]" >
-            <img src={banner} alt="image" className=" w-full h-full object-cover" title="Image" />
+          </motion.div>
+          <div className=" w-full lg:w-[60%]" >
+            <img src={hanumang} alt="image" className=" w-full h-full object-cover scale-x-[-1] " title="Image" />
+            
           </div>
         </div>
       </div>
