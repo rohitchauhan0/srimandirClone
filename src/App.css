@@ -113,3 +113,20 @@ background: linear-gradient(0deg, rgba(67,67,67,0) 0%, rgba(255,253,253,0.997724
   transform: translateX(1200%);
   }
 }
+
+
+
+.infinite-animation{
+  text-wrap: nowrap;
+  color: white;
+  animation: scroll-text linear infinite 20s   ;
+}
+
+@keyframes scroll-text {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-130%);
+  }
+}

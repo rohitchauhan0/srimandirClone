@@ -250,7 +250,7 @@ const PoojaById = () => {
                 />
                 <div className=" w-full flex flex-col items-center  gap-4 px-10">
                   <pre
-                    className=" w-full text-gray-500 text-sm leading-5"
+                    className=" w-full text-gray-500 text-base leading-5"
                     style={{ whiteSpace: "pre-wrap" }}
                   >
                     {poojadetail.templeDetail}
