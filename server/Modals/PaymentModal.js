@@ -1,9 +1,20 @@
 const mongoose = require('mongoose')
 
 const paymentModal = new mongoose.Schema({
-    userId:{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:"user"
+    fullname:{
+        type:String
+    },
+    phoneNum:{
+        type:String
+    },
+    gotra:{
+        type:String
+    },
+    address:{
+        type:String
+    },
+    dob:{
+        type:String
     },
     poojaId:{
         type:mongoose.Schema.Types.ObjectId,

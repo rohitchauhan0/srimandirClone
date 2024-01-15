@@ -19,7 +19,6 @@ const PaymentPage = () => {
   const { GET_PACKAGE_BY_ID_API } = packageEnPoints;
   const [poojadetail, setpoojadetail] = useState("");
   const [packageDetails, setpackageDetails] = useState("");
-  const {user} = useSelector((state)=> state.profile)
   const {GET_ALL_ITEM_API} = itemEndPoints
   const [itemDetails, setitemDetails] = useState([])
   const [addeditems, setaddeditems] = useState([])
@@ -29,6 +28,9 @@ const PaymentPage = () => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const {discountMoney}= useSelector((state)=> state.coupne)
+
+  const {formData} = useSelector((state)=> state.payment)
+
   useEffect(() => {
    const getAllItem = async()=>{
       try {
@@ -93,8 +95,9 @@ const PaymentPage = () => {
 
   const totalPrice = addeditems.reduce((total, detail) => total + detail.price, 0) + (packageDetails.price-discountMoney);
   const paymentHandler = ()=>{
-    if(token !== null && user.accountType === "User"){
-    bookPuja(token, poojaId, packageId,offeringItems, navigate, dispatch, totalPrice, user )
+    if(formData !== null ){
+      const {fullname, phoneNum, address, gotra, dob} = formData
+    bookPuja(token, poojaId, packageId,offeringItems, navigate, dispatch, totalPrice, fullname, phoneNum, address, gotra, dob )
     }
     else{
       toast.error("Admin can't book pooja")
@@ -140,12 +143,15 @@ const PaymentPage = () => {
                }
           </div>
           <div className=" flex flex-col gap-2 p-3 border border-gray-400 rounded-xl bg-gray-50 text-[12px]">
-                <p className=" text-orange-500 font-semibold">{user?.fullName}</p>
-                <p>{user?.phoneNum} (Your whatsapp number)</p>
+                <p className=" text-orange-500 font-semibold">{formData?.fullName}</p>
+                <p>{formData?.phoneNum} (Your whatsapp number)</p>
+                <p>{formData?.address} (Your address )</p>
+                <p>{formData?.gotra} (Your gotra )</p>
+                <p>{formData?.dob} (Your date of birth )</p>
           </div> 
           <div className=" flex flex-col gap-2 p-3 text-[12px]">
                 <h2 className=" text-xl font-bold">Bill details</h2>
-                <p className="">{user?.phoneNum} (Your whatsapp number)</p>
+                <p>{formData?.phoneNum} (Your whatsapp number)</p>
                 <div className=" flex justify-between">
                 <p className=" text-xl font-semibold text-gray-500">
               {packageDetails.title}

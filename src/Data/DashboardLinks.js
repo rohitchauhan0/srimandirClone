@@ -56,13 +56,6 @@ export const DASHBOARD_LINK = [
     path:"/dashboard/my-items",
         accountType: ACCOUNT_TYPE.ADMIN
     },
-   
-    {
-        id:11,
-        title:"Booked pooja",
-        accountType: ACCOUNT_TYPE.USER,
-    path:"/dashboard/booked-pooja",
-    },
     {
         id:12,
         title:"Create library",

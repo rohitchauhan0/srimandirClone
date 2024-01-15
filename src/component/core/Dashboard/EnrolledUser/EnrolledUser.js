@@ -62,8 +62,11 @@ const EnrolledUser = () => {
                    <p className=' text-green-500'>₹ {data.packageId?.price}</p>
                 </div>
                 <div className=" text-gray-500 flex  gap-4 text-[17px] justify-between">
-                <p>{data.userId.fullName}</p>
-                   <p className=' flex items-center gap-2'> <RiWhatsappLine className=' text-green-500' />{data.userId?.phoneNum}</p>
+                <p>{data?.fullName}</p>
+                <p>{data?.dob}</p>
+                <p>{data?.address}</p>
+                <p>{data?.gotra}</p>
+                   <p className=' flex items-center gap-2'> <RiWhatsappLine className=' text-green-500' />{data?.phoneNum}</p>
                 </div> 
                 
                 <hr className=' w-full h-[2px] bg-gray-500' />

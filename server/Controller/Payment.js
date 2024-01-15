@@ -40,7 +40,7 @@ exports.verifyPayment = async (req, res) => {
   try {
     const { razorpay_order_id, razorpay_payment_id, razorpay_signature } = req.body;
     const { poojaId, packageId, offeringItems, totalPrice } = req.body;
-    const userId = req.user.id;
+    const {fullname, phoneNum, address, gotra, dob} = req.body;
 
     if (!razorpay_order_id || !razorpay_payment_id || !razorpay_signature) {
       return res
@@ -60,7 +60,7 @@ exports.verifyPayment = async (req, res) => {
         poojaId,
         packageId,
         offeringItems,
-        userId,
+        fullname, phoneNum, address, gotra, dob,
         totalPrice,
         res
       );
@@ -82,7 +82,7 @@ const enrolledUser = async (
   poojaId,
   packageId,
   offeringItems,
-  userId,
+  fullname, phoneNum, address, gotra, dob,
   totalPrice,
   res
 ) => {
@@ -91,19 +91,15 @@ const enrolledUser = async (
       poojaId: poojaId,
       packageId: packageId,
       offeringItem: offeringItems,
-      userId: userId,
+      fullname, phoneNum, address, gotra, dob,
       totalPrice,
     });
     const admin = "Admin"
 
-    const user = await User.findByIdAndUpdate({_id:userId}, {$push:{
-      pooja:createPayment._id
-    }}, {new:true});
 
     const adminUser = await User.findOne({accountType:admin})
 
-    mailSender(adminUser.email, "New puja booked", `A new puja booked by ${user.phoneNum}. check now!`)
-    mailSender(user.email, "Payment received", "Thank you");
+    mailSender(adminUser.email, "New puja booked", `A new puja booked by ${phoneNum}. check now!`)
   } catch (error) {
     console.log(error);
     return res.status(500).json({ success: false, message: error.message });
@@ -116,7 +112,6 @@ const enrolledUser = async (
 exports.getPaymentDetails = async (req, res) => {
   try {
     const allDetails = await Payment.find({})
-      .populate("userId")
       .populate("poojaId") 
       .populate("packageId")
       .populate("offeringItem")

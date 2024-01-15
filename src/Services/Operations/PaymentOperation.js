@@ -18,7 +18,7 @@ const loadscript = (src)=>{
     })
 }
 
-export async function bookPuja(token, poojaId, packageId, offeringItems, navigate, dispatch, totalPrice, user){
+export async function bookPuja(token, poojaId, packageId, offeringItems, navigate, dispatch, totalPrice, fullname, phoneNum, address, gotra, dob){
     const toastId = toast.loading("Please wait")
     try {
         const res = await loadscript(`https://checkout.razorpay.com/v1/checkout.js`)
@@ -42,11 +42,9 @@ export async function bookPuja(token, poojaId, packageId, offeringItems, navigat
             name:"Rohit",
             description:"Thank you for booking",
             prefill:{
-                    name:`${user.fullName}`,
-                    email:`${user.email}`,
-            },
+                    name:`${fullname}`,            },
             handler: function(response){
-                verifyPayment({...response, poojaId, packageId, offeringItems, totalPrice}, token, navigate, dispatch)
+                verifyPayment({...response, poojaId, packageId, offeringItems, totalPrice, fullname, phoneNum, address, gotra, dob}, token, navigate, dispatch)
             }
         }
 
@@ -65,7 +63,7 @@ export async function bookPuja(token, poojaId, packageId, offeringItems, navigat
     toast.dismiss(toastId)
 }
 
-async function verifyPayment(bodydata, token, navigate, dispatch){
+async function verifyPayment(bodydata, token){
 
 
     const toastId = toast.loading("Verify payment")
@@ -77,8 +75,7 @@ async function verifyPayment(bodydata, token, navigate, dispatch){
         if(!response.data.success) {
             throw new Error(response.data.message);
         }
-        toast.success("payment Successfull");
-        navigate("/dashboard/booked-pooja")
+        toast.success("payment Successfull, Your pooja has been booked");
         
     } catch (error) {
         console.log("PAYMENT VERIFY ERROR....", error);

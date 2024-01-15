@@ -5,15 +5,19 @@ import { FaDotCircle } from "react-icons/fa";
 import { FaArrowRight } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import toast from "react-hot-toast";
 import { setShowAuthModal } from "../../../Slices/AuthSlice";
+import { setShowFrom } from "../../../Slices/PaymentSlice";
+import FormModal from "./FormModal";
 
 const PaymentCard = ({ poojaId }) => {
   const { GET_ALL_PACKAGE_API } = packageEnPoints;
   const [packageDetails, setpackageDetails] = useState([]);
   const { token } = useSelector((state) => state.auth);
+  const {showForm} = useSelector((state)=> state.payment)
+  console.log(showForm)
   const navigate = useNavigate();
   const dispatch = useDispatch()
+  const [form, setform] = useState("")
   useEffect(() => {
     const getPackgeDetails = async () => {
       try {
@@ -40,7 +44,8 @@ const PaymentCard = ({ poojaId }) => {
   };
 
   return (
-    <div className=" flex flex-col gap-8 lg:px-0 px-3">
+   <>
+     <div className=" flex flex-col gap-8 lg:px-0 px-3">
       <h2 className=" text-xl lg:text-4xl font-bold ">Select pooja package</h2>
       <div className=" grid gap-9 sm:grid-cols-2 lg:grid-cols-4 ">
         {packageDetails.map((data, index) => {
@@ -93,9 +98,11 @@ const PaymentCard = ({ poojaId }) => {
                 <button
                   className=" w-full p-2 rounded-xl text-white font-bold cursor-pointer gradientButton relative overflow-hidden flex gap-2 items-center justify-center"
                   onClick={() => {
-                    token !== null
-                      ? navigate(`/puja/${poojaId}/${data._id}`)
-                      : dispatch(setShowAuthModal(true));
+                    dispatch(setShowFrom(true));
+                    setform({
+                      poojaId:poojaId,
+                      paymentId:data._id
+                    })
                   }}
                 >
                   <div className=" w-[80px] h-[150px] bg-white -top-2 -left-2 rotate-45 absolute -skew-x-[45deg] opacity-40 animateButton"></div>
@@ -108,6 +115,10 @@ const PaymentCard = ({ poojaId }) => {
         })}
       </div>
     </div>
+    {
+      showForm && <FormModal form={form}/>
+    }
+   </>
   );
 };
 
